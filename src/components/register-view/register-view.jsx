@@ -1,9 +1,21 @@
 import React, {useState} from "react";
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import FloatingLabel from "react-bootstrap/FloatingLabel";
+import Image from 'react-bootstrap/Image'
+
+import placeholder from './tiger.jpeg'
+
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 import './register-view.scss';
 
 export function RegisterView(props) {
     const [ RegisterUsername, setRegistered] = useState('')
+    const [ RegisterPassword, setRegisteredPassword] = useState('')
+    const [ RegisterEmail, setRegisteredEmail] = useState('')
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -14,12 +26,22 @@ export function RegisterView(props) {
     };
 
     return (
-        <form>
-            <label>
-                REGISTER Username:
-                <input type='text' value={RegisterUsername} onChange={e => setRegistered(e.target.value)} />
-            </label>
-            <button type='submit' onClick={handleSubmit}>register?</button>
-        </form>
+        <Form>
+            <Image fluid='true' src={placeholder} alt="wd" />
+
+            <FloatingLabel controlId='formUsername' label='Username' >
+                <Form.Control type='text' placeholder='Username' value={RegisterUsername} onChange={e => setRegistered(e.target.value)} />
+            </FloatingLabel>
+
+            <FloatingLabel controlId='formPassword' label='Password' >
+                <Form.Control type='password' placeholder='Password' value={RegisterPassword} onChange={e => setRegisteredPassword(e.target.value)} />
+            </FloatingLabel>    
+
+            <FloatingLabel controlId='formEmail' label='Email' >
+                <Form.Control type='email' placeholder='Email' value={RegisterEmail} onChange={e => setRegisteredEmail(e.target.value)} />
+            </FloatingLabel>
+
+            <Button variant='primary' type='submit' onClick={handleSubmit}>Sign up</Button>
+        </Form>
     );
 }
