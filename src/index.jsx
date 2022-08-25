@@ -13,10 +13,9 @@ import './index.scss';
 class MyFlixApplication extends React.Component {
   render() {
     return (
-      <Container>
+      <Container fluid style={{padding: "0px 0px 0px 0px"}}>
         <MainView />
       </Container>
-      
     );
   }
 }

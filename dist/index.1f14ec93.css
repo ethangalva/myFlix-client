@@ -1,4 +1,53 @@
+body, html {
+  height: 100%;
+}
 
+.bg-color {
+  background-color: #252728;
+}
+
+.background {
+  background-image: url(background.15cd74a5.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.inverted-border-radius-top {
+  position: relative; /* Add position relative so the pseudo element will origin off this with position absolute */
+}
+
+/* The newly created pseudo element */
+
+.inverted-border-radius-top::before {
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  left: -62px;
+  height: 50px;
+  width: 50px;
+  border-top-right-radius: 50px;
+  box-shadow: 0 -25px #252728, 15px 0 #252728, 20px -20px #252728; /* This is where the magic happens! */
+}
+
+.inverted-border-radius-bottom {
+  position: fixed; /* Add position relative so the pseudo element will origin off this with position absolute */
+  bottom: 0;
+}
+
+/* The newly created pseudo element */
+
+.inverted-border-radius-bottom::before {
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  top: -50px;
+  left: -62px;
+  height: 50px;
+  width: 50px;
+  border-bottom-right-radius: 50px;
+  box-shadow: 0 25px #252728, 15px 0 #252728, 20px 20px #252728; /* This is where the magic happens! */
+}
 .my-flix {
   color: steelblue;
 }

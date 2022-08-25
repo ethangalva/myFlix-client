@@ -956,6 +956,10 @@ var _indexScss = require("./index.scss");
 class MyFlixApplication extends _reactDefault.default.Component {
     render() {
         return(/*#__PURE__*/ _jsxRuntime.jsx(_containerDefault.default, {
+            fluid: true,
+            style: {
+                padding: "0px 0px 0px 0px"
+            },
             __source: {
                 fileName: "src/index.jsx",
                 lineNumber: 16
@@ -41498,10 +41502,9 @@ var _button = require("react-bootstrap/Button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
 var _floatingLabel = require("react-bootstrap/FloatingLabel");
 var _floatingLabelDefault = parcelHelpers.interopDefault(_floatingLabel);
-var _image = require("react-bootstrap/Image");
-var _imageDefault = parcelHelpers.interopDefault(_image);
-var _tigerJpeg = require("./tiger.jpeg");
-var _tigerJpegDefault = parcelHelpers.interopDefault(_tigerJpeg);
+// remove after touchups
+var _container = require("react-bootstrap/Container");
+var _containerDefault = parcelHelpers.interopDefault(_container);
 var _row = require("react-bootstrap/Row");
 var _rowDefault = parcelHelpers.interopDefault(_row);
 var _col = require("react-bootstrap/Col");
@@ -41519,98 +41522,144 @@ function RegisterView(props) {
         // post request to create user in db via api call
         props.onRegister(RegisterUsername);
     };
-    return(/*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default, {
+    return(/*#__PURE__*/ _jsxRuntime.jsx(_containerDefault.default, {
+        fluid: true,
         __source: {
             fileName: "src/components/register-view/register-view.jsx",
-            lineNumber: 29
+            lineNumber: 28
         },
         __self: this,
-        children: [
-            /*#__PURE__*/ _jsxRuntime.jsx(_imageDefault.default, {
-                fluid: "true",
-                src: _tigerJpegDefault.default,
-                alt: "wd",
-                __source: {
-                    fileName: "src/components/register-view/register-view.jsx",
-                    lineNumber: 30
-                },
-                __self: this
-            }),
-            /*#__PURE__*/ _jsxRuntime.jsx(_floatingLabelDefault.default, {
-                controlId: "formUsername",
-                label: "Username",
-                __source: {
-                    fileName: "src/components/register-view/register-view.jsx",
-                    lineNumber: 32
-                },
-                __self: this,
-                children: /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
-                    type: "text",
-                    placeholder: "Username",
-                    value: RegisterUsername,
-                    onChange: (e)=>setRegistered(e.target.value)
-                    ,
+        children: /*#__PURE__*/ _jsxRuntime.jsxs(_rowDefault.default, {
+            className: "vh-100",
+            __source: {
+                fileName: "src/components/register-view/register-view.jsx",
+                lineNumber: 29
+            },
+            __self: this,
+            children: [
+                /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                    xs: 0,
+                    md: 3,
+                    className: "d-none d-md-block background",
                     __source: {
                         fileName: "src/components/register-view/register-view.jsx",
-                        lineNumber: 33
+                        lineNumber: 30
                     },
                     __self: this
-                })
-            }),
-            /*#__PURE__*/ _jsxRuntime.jsx(_floatingLabelDefault.default, {
-                controlId: "formPassword",
-                label: "Password",
-                __source: {
-                    fileName: "src/components/register-view/register-view.jsx",
-                    lineNumber: 36
-                },
-                __self: this,
-                children: /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
-                    type: "password",
-                    placeholder: "Password",
-                    value: RegisterPassword,
-                    onChange: (e)=>setRegisteredPassword(e.target.value)
-                    ,
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
+                    xs: 12,
+                    md: 9,
+                    className: "bg-color",
                     __source: {
                         fileName: "src/components/register-view/register-view.jsx",
-                        lineNumber: 37
+                        lineNumber: 32
                     },
-                    __self: this
+                    __self: this,
+                    children: [
+                        /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                            className: "inverted-border-radius-top",
+                            __source: {
+                                fileName: "src/components/register-view/register-view.jsx",
+                                lineNumber: 34
+                            },
+                            __self: this
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                            className: "inverted-border-radius-bottom",
+                            __source: {
+                                fileName: "src/components/register-view/register-view.jsx",
+                                lineNumber: 35
+                            },
+                            __self: this
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default, {
+                            __source: {
+                                fileName: "src/components/register-view/register-view.jsx",
+                                lineNumber: 38
+                            },
+                            __self: this,
+                            children: [
+                                /*#__PURE__*/ _jsxRuntime.jsx(_floatingLabelDefault.default, {
+                                    controlId: "formUsername",
+                                    label: "Username",
+                                    __source: {
+                                        fileName: "src/components/register-view/register-view.jsx",
+                                        lineNumber: 39
+                                    },
+                                    __self: this,
+                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
+                                        type: "text",
+                                        placeholder: "Username",
+                                        value: RegisterUsername,
+                                        onChange: (e)=>setRegistered(e.target.value)
+                                        ,
+                                        __source: {
+                                            fileName: "src/components/register-view/register-view.jsx",
+                                            lineNumber: 40
+                                        },
+                                        __self: this
+                                    })
+                                }),
+                                /*#__PURE__*/ _jsxRuntime.jsx(_floatingLabelDefault.default, {
+                                    controlId: "formPassword",
+                                    label: "Password",
+                                    __source: {
+                                        fileName: "src/components/register-view/register-view.jsx",
+                                        lineNumber: 43
+                                    },
+                                    __self: this,
+                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
+                                        type: "password",
+                                        placeholder: "Password",
+                                        value: RegisterPassword,
+                                        onChange: (e)=>setRegisteredPassword(e.target.value)
+                                        ,
+                                        __source: {
+                                            fileName: "src/components/register-view/register-view.jsx",
+                                            lineNumber: 44
+                                        },
+                                        __self: this
+                                    })
+                                }),
+                                /*#__PURE__*/ _jsxRuntime.jsx(_floatingLabelDefault.default, {
+                                    controlId: "formEmail",
+                                    label: "Email",
+                                    __source: {
+                                        fileName: "src/components/register-view/register-view.jsx",
+                                        lineNumber: 47
+                                    },
+                                    __self: this,
+                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
+                                        type: "email",
+                                        placeholder: "Email",
+                                        value: RegisterEmail,
+                                        onChange: (e)=>setRegisteredEmail(e.target.value)
+                                        ,
+                                        __source: {
+                                            fileName: "src/components/register-view/register-view.jsx",
+                                            lineNumber: 48
+                                        },
+                                        __self: this
+                                    })
+                                }),
+                                /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
+                                    variant: "primary",
+                                    type: "submit",
+                                    onClick: handleSubmit,
+                                    __source: {
+                                        fileName: "src/components/register-view/register-view.jsx",
+                                        lineNumber: 51
+                                    },
+                                    __self: this,
+                                    children: "Sign up"
+                                })
+                            ]
+                        })
+                    ]
                 })
-            }),
-            /*#__PURE__*/ _jsxRuntime.jsx(_floatingLabelDefault.default, {
-                controlId: "formEmail",
-                label: "Email",
-                __source: {
-                    fileName: "src/components/register-view/register-view.jsx",
-                    lineNumber: 40
-                },
-                __self: this,
-                children: /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
-                    type: "email",
-                    placeholder: "Email",
-                    value: RegisterEmail,
-                    onChange: (e)=>setRegisteredEmail(e.target.value)
-                    ,
-                    __source: {
-                        fileName: "src/components/register-view/register-view.jsx",
-                        lineNumber: 41
-                    },
-                    __self: this
-                })
-            }),
-            /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
-                variant: "primary",
-                type: "submit",
-                onClick: handleSubmit,
-                __source: {
-                    fileName: "src/components/register-view/register-view.jsx",
-                    lineNumber: 44
-                },
-                __self: this,
-                children: "Sign up"
-            })
-        ]
+            ]
+        })
     }));
 }
 _s(RegisterView, "R3icxxNxpceUnilNmvzCZLe2FCw=");
@@ -41623,45 +41672,7 @@ $RefreshReg$(_c, "RegisterView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap/Form":"5ykgY","react-bootstrap/Button":"9CzHT","react-bootstrap/FloatingLabel":"27LBy","react-bootstrap/Image":"kKVYG","./tiger.jpeg":"b9Dpt","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","./register-view.scss":"lzDtJ","@parcel/transformer-js/src/esmodule-helpers.js":"dRPCt","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"l3WWw"}],"b9Dpt":[function(require,module,exports) {
-module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "tiger.88712542.jpeg";
-
-},{"./helpers/bundle-url":"atR9c"}],"atR9c":[function(require,module,exports) {
-"use strict";
-var bundleURL = {
-};
-function getBundleURLCached(id) {
-    var value = bundleURL[id];
-    if (!value) {
-        value = getBundleURL();
-        bundleURL[id] = value;
-    }
-    return value;
-}
-function getBundleURL() {
-    try {
-        throw new Error();
-    } catch (err) {
-        var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
-        if (matches) // The first two stack frames will be this function and getBundleURLCached.
-        // Use the 3rd one, which will be a runtime in the original bundle.
-        return getBaseURL(matches[2]);
-    }
-    return '/';
-}
-function getBaseURL(url) {
-    return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
-} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-function getOrigin(url) {
-    var matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
-    if (!matches) throw new Error('Origin not found');
-    return matches[0];
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
-
-},{}],"lzDtJ":[function() {},{}],"l3WWw":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap/Form":"5ykgY","react-bootstrap/Button":"9CzHT","react-bootstrap/FloatingLabel":"27LBy","react-bootstrap/Container":"2PRIq","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","./register-view.scss":"lzDtJ","@parcel/transformer-js/src/esmodule-helpers.js":"dRPCt","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"l3WWw"}],"lzDtJ":[function() {},{}],"l3WWw":[function(require,module,exports) {
 "use strict";
 var Refresh = require('react-refresh/runtime');
 function debounce(func, delay) {
