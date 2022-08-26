@@ -2,12 +2,8 @@ body, html {
   height: 100%;
 }
 
-.bg-color {
-  background-color: #252728;
-}
-
-.background {
-  background-image: url(background.15cd74a5.jpg);
+.background-image {
+  background-image: url(register-background.965e2332.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -26,8 +22,8 @@ body, html {
   left: -62px;
   height: 50px;
   width: 50px;
-  border-top-right-radius: 50px;
-  box-shadow: 0 -25px #252728, 15px 0 #252728, 20px -20px #252728; /* This is where the magic happens! */
+  border-top-right-radius: 25px;
+  box-shadow: 0 -25px #e2e2e4, 15px 0 #e2e2e4, 20px -20px #e2e2e4; /* This is where the magic happens! */
 }
 
 .inverted-border-radius-bottom {
@@ -45,10 +41,26 @@ body, html {
   left: -62px;
   height: 50px;
   width: 50px;
-  border-bottom-right-radius: 50px;
-  box-shadow: 0 25px #252728, 15px 0 #252728, 20px 20px #252728; /* This is where the magic happens! */
+  border-bottom-right-radius: 25px;
+  box-shadow: 0 25px #e2e2e4, 15px 0 #e2e2e4, 20px 20px #e2e2e4; /* This is where the magic happens! */
 }
-.my-flix {
-  color: steelblue;
+
+.main-row {
+  background-image: url(blobanimation.01cf1ede.svg), url(blobanimation-2.cd32545f.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: top -150px right -175px, bottom -175px left -150px;
+  background-size: 400px, 350px;
+}
+
+@media only screen and (min-width: 768px) {
+  .main-row {
+    background-image: url(blobanimation.01cf1ede.svg);
+    background-repeat: no-repeat;
+    background-position: top -150px right -175px;
+    background-size: 400px;
+  }
+}
+.bg-color {
+  background-color: #e2e2e4;
 }
 /*# sourceMappingURL=index.1f14ec93.css.map */
