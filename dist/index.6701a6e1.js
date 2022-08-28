@@ -42242,83 +42242,532 @@ function LoginView(props) {
         // Send request to server for auth
         props.onLoggedIn(username);
     };
-    return(/*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default, {
+    return(// <Form>
+    //     <Form.Group controlId='formUsername'>
+    //         <Form.Label>Username:</Form.Label>
+    //         <Form.Control type='text' onChange={e => setUsername(e.target.value)} placeholder='Enter username' />
+    //     </Form.Group>
+    //     <Form.Group controlId='formPassword' >
+    //         <Form.Label>Password:</Form.Label>
+    //         <Form.Control type='password' onChange={e => setPassword(e.target.value)} placeholder='Enter password' />
+    //     </Form.Group>
+    //     <Button variant='primary' type='submit' onClick={handleSubmit}>Submit</Button>
+    // </Form>
+    /*#__PURE__*/ _jsxRuntime.jsx(_containerDefault.default, {
+        fluid: true,
+        className: "bg-color",
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 30
+            lineNumber: 42
         },
         __self: this,
-        children: [
-            /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default.Group, {
-                controlId: "formUsername",
-                __source: {
-                    fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 31
-                },
-                __self: this,
-                children: [
-                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
-                        __source: {
-                            fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 32
-                        },
-                        __self: this,
-                        children: "Username:"
-                    }),
-                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
-                        type: "text",
-                        onChange: (e)=>setUsername(e.target.value)
-                        ,
-                        placeholder: "Enter username",
-                        __source: {
-                            fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 33
-                        },
-                        __self: this
-                    })
-                ]
-            }),
-            /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default.Group, {
-                controlId: "formPassword",
-                __source: {
-                    fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 36
-                },
-                __self: this,
-                children: [
-                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
-                        __source: {
-                            fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 37
-                        },
-                        __self: this,
-                        children: "Password:"
-                    }),
-                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
-                        type: "password",
-                        onChange: (e)=>setPassword(e.target.value)
-                        ,
-                        placeholder: "Enter password",
-                        __source: {
-                            fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 38
-                        },
-                        __self: this
-                    })
-                ]
-            }),
-            /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
-                variant: "primary",
-                type: "submit",
-                onClick: handleSubmit,
-                __source: {
-                    fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 40
-                },
-                __self: this,
-                children: "Submit"
-            })
-        ]
+        children: /*#__PURE__*/ _jsxRuntime.jsxs(_rowDefault.default, {
+            className: "vh-100 justify-content-center container-row",
+            __source: {
+                fileName: "src/components/login-view/login-view.jsx",
+                lineNumber: 43
+            },
+            __self: this,
+            children: [
+                /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                    xs: 0,
+                    md: 0,
+                    lg: 3,
+                    xl: 3,
+                    className: "d-none d-lg-block background-image",
+                    __source: {
+                        fileName: "src/components/login-view/login-view.jsx",
+                        lineNumber: 47
+                    },
+                    __self: this
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
+                    xs: 12,
+                    md: 12,
+                    lg: 9,
+                    xl: 9,
+                    className: "bg-color gap-2",
+                    __source: {
+                        fileName: "src/components/login-view/login-view.jsx",
+                        lineNumber: 50
+                    },
+                    __self: this,
+                    children: [
+                        /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                            className: "inverted-border-radius-top d-none d-xl-block",
+                            __source: {
+                                fileName: "src/components/login-view/login-view.jsx",
+                                lineNumber: 53
+                            },
+                            __self: this
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                            className: "inverted-border-radius-bottom d-none d-xl-block",
+                            __source: {
+                                fileName: "src/components/login-view/login-view.jsx",
+                                lineNumber: 54
+                            },
+                            __self: this
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                            xs: 12,
+                            md: 12,
+                            lg: 12,
+                            xl: 12,
+                            __source: {
+                                fileName: "src/components/login-view/login-view.jsx",
+                                lineNumber: 60
+                            },
+                            __self: this,
+                            children: /*#__PURE__*/ _jsxRuntime.jsxs(_rowDefault.default, {
+                                className: "gap-2 align-items-center vh-100 align-content-center main-row gap-xl-0",
+                                __source: {
+                                    fileName: "src/components/login-view/login-view.jsx",
+                                    lineNumber: 61
+                                },
+                                __self: this,
+                                children: [
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                                        xs: 12,
+                                        md: 12,
+                                        lg: 12,
+                                        xl: 12,
+                                        style: {
+                                            marginBottom: "5vh"
+                                        },
+                                        __source: {
+                                            fileName: "src/components/login-view/login-view.jsx",
+                                            lineNumber: 67
+                                        },
+                                        __self: this,
+                                        children: /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+                                            className: "justify-content-center",
+                                            __source: {
+                                                fileName: "src/components/login-view/login-view.jsx",
+                                                lineNumber: 68
+                                            },
+                                            __self: this,
+                                            children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
+                                                xs: 10,
+                                                sm: 8,
+                                                lg: 8,
+                                                __source: {
+                                                    fileName: "src/components/login-view/login-view.jsx",
+                                                    lineNumber: 69
+                                                },
+                                                __self: this,
+                                                children: [
+                                                    /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                                                        style: {
+                                                            marginBottom: "0px"
+                                                        },
+                                                        __source: {
+                                                            fileName: "src/components/login-view/login-view.jsx",
+                                                            lineNumber: 70
+                                                        },
+                                                        __self: this,
+                                                        children: "we are exited to see you back here!"
+                                                    }),
+                                                    /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                                                        style: {
+                                                            fontWeight: "bold"
+                                                        },
+                                                        __source: {
+                                                            fileName: "src/components/login-view/login-view.jsx",
+                                                            lineNumber: 71
+                                                        },
+                                                        __self: this,
+                                                        children: "Sign into your account and continue watching our great movie selection."
+                                                    })
+                                                ]
+                                            })
+                                        })
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                                        xs: 0,
+                                        md: 0,
+                                        lg: 0,
+                                        xl: 6,
+                                        className: "d-none d-xl-block",
+                                        __source: {
+                                            fileName: "src/components/login-view/login-view.jsx",
+                                            lineNumber: 77
+                                        },
+                                        __self: this,
+                                        children: /*#__PURE__*/ _jsxRuntime.jsxs(_rowDefault.default, {
+                                            className: "gap-2 justify-content-center",
+                                            __source: {
+                                                fileName: "src/components/login-view/login-view.jsx",
+                                                lineNumber: 78
+                                            },
+                                            __self: this,
+                                            children: [
+                                                /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
+                                                    xs: 0,
+                                                    md: 0,
+                                                    lg: 0,
+                                                    xl: 10,
+                                                    __source: {
+                                                        fileName: "src/components/login-view/login-view.jsx",
+                                                        lineNumber: 79
+                                                    },
+                                                    __self: this,
+                                                    children: [
+                                                        /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                                                            className: "font-weight-bold ",
+                                                            __source: {
+                                                                fileName: "src/components/login-view/login-view.jsx",
+                                                                lineNumber: 80
+                                                            },
+                                                            __self: this,
+                                                            children: "Watch everywhere."
+                                                        }),
+                                                        /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                                                            __source: {
+                                                                fileName: "src/components/login-view/login-view.jsx",
+                                                                lineNumber: 81
+                                                            },
+                                                            __self: this,
+                                                            children: "Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV without paying more."
+                                                        })
+                                                    ]
+                                                }),
+                                                /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
+                                                    xs: 0,
+                                                    md: 0,
+                                                    lg: 0,
+                                                    xl: 10,
+                                                    __source: {
+                                                        fileName: "src/components/login-view/login-view.jsx",
+                                                        lineNumber: 83
+                                                    },
+                                                    __self: this,
+                                                    children: [
+                                                        /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                                                            className: "font-weight-bold",
+                                                            __source: {
+                                                                fileName: "src/components/login-view/login-view.jsx",
+                                                                lineNumber: 84
+                                                            },
+                                                            __self: this,
+                                                            children: "Enjoy on your TV."
+                                                        }),
+                                                        /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                                                            __source: {
+                                                                fileName: "src/components/login-view/login-view.jsx",
+                                                                lineNumber: 85
+                                                            },
+                                                            __self: this,
+                                                            children: "Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more."
+                                                        })
+                                                    ]
+                                                }),
+                                                /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
+                                                    xs: 0,
+                                                    md: 0,
+                                                    lg: 0,
+                                                    xl: 10,
+                                                    __source: {
+                                                        fileName: "src/components/login-view/login-view.jsx",
+                                                        lineNumber: 87
+                                                    },
+                                                    __self: this,
+                                                    children: [
+                                                        /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                                                            className: "font-weight-bold",
+                                                            __source: {
+                                                                fileName: "src/components/login-view/login-view.jsx",
+                                                                lineNumber: 88
+                                                            },
+                                                            __self: this,
+                                                            children: "Download your shows to watch offline."
+                                                        }),
+                                                        /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                                                            __source: {
+                                                                fileName: "src/components/login-view/login-view.jsx",
+                                                                lineNumber: 89
+                                                            },
+                                                            __self: this,
+                                                            children: "Save your favorites easily and always have something to watch."
+                                                        })
+                                                    ]
+                                                })
+                                            ]
+                                        })
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                                        xs: 12,
+                                        md: 12,
+                                        lg: 12,
+                                        xl: 6,
+                                        __source: {
+                                            fileName: "src/components/login-view/login-view.jsx",
+                                            lineNumber: 95
+                                        },
+                                        __self: this,
+                                        children: /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default, {
+                                            __source: {
+                                                fileName: "src/components/login-view/login-view.jsx",
+                                                lineNumber: 96
+                                            },
+                                            __self: this,
+                                            children: /*#__PURE__*/ _jsxRuntime.jsxs(_rowDefault.default, {
+                                                className: "gap-2  form-row",
+                                                __source: {
+                                                    fileName: "src/components/login-view/login-view.jsx",
+                                                    lineNumber: 97
+                                                },
+                                                __self: this,
+                                                children: [
+                                                    /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                                                        xs: 10,
+                                                        sm: 8,
+                                                        lg: 8,
+                                                        __source: {
+                                                            fileName: "src/components/login-view/login-view.jsx",
+                                                            lineNumber: 98
+                                                        },
+                                                        __self: this,
+                                                        children: /*#__PURE__*/ _jsxRuntime.jsx(_floatingLabelDefault.default, {
+                                                            controlId: "formUsername",
+                                                            label: "Username",
+                                                            bg: "primary",
+                                                            __source: {
+                                                                fileName: "src/components/login-view/login-view.jsx",
+                                                                lineNumber: 99
+                                                            },
+                                                            __self: this,
+                                                            children: /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
+                                                                type: "text",
+                                                                placeholder: "Username",
+                                                                value: username,
+                                                                onChange: (e)=>setUsername(e.target.value)
+                                                                ,
+                                                                __source: {
+                                                                    fileName: "src/components/login-view/login-view.jsx",
+                                                                    lineNumber: 100
+                                                                },
+                                                                __self: this
+                                                            })
+                                                        })
+                                                    }),
+                                                    /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                                                        xs: 10,
+                                                        sm: 8,
+                                                        lg: 8,
+                                                        __source: {
+                                                            fileName: "src/components/login-view/login-view.jsx",
+                                                            lineNumber: 103
+                                                        },
+                                                        __self: this,
+                                                        children: /*#__PURE__*/ _jsxRuntime.jsx(_floatingLabelDefault.default, {
+                                                            controlId: "formUsername",
+                                                            label: "Username",
+                                                            bg: "primary",
+                                                            __source: {
+                                                                fileName: "src/components/login-view/login-view.jsx",
+                                                                lineNumber: 104
+                                                            },
+                                                            __self: this,
+                                                            children: /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
+                                                                type: "text",
+                                                                placeholder: "Username",
+                                                                value: username,
+                                                                onChange: (e)=>setUsername(e.target.value)
+                                                                ,
+                                                                __source: {
+                                                                    fileName: "src/components/login-view/login-view.jsx",
+                                                                    lineNumber: 105
+                                                                },
+                                                                __self: this
+                                                            })
+                                                        })
+                                                    }),
+                                                    /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
+                                                        xs: 10,
+                                                        sm: 8,
+                                                        lg: 8,
+                                                        className: "d-grid",
+                                                        __source: {
+                                                            fileName: "src/components/login-view/login-view.jsx",
+                                                            lineNumber: 110
+                                                        },
+                                                        __self: this,
+                                                        children: [
+                                                            /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
+                                                                variant: "success",
+                                                                type: "submit",
+                                                                onClick: handleSubmit,
+                                                                __source: {
+                                                                    fileName: "src/components/login-view/login-view.jsx",
+                                                                    lineNumber: 111
+                                                                },
+                                                                __self: this,
+                                                                children: "Sign In"
+                                                            }),
+                                                            /*#__PURE__*/ _jsxRuntime.jsx("hr", {
+                                                                __source: {
+                                                                    fileName: "src/components/login-view/login-view.jsx",
+                                                                    lineNumber: 114
+                                                                },
+                                                                __self: this
+                                                            }),
+                                                            /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                                                                xs: 10,
+                                                                sm: 8,
+                                                                lg: 8,
+                                                                style: {
+                                                                    marginBottom: "8px",
+                                                                    textAlign: "center"
+                                                                },
+                                                                __source: {
+                                                                    fileName: "src/components/login-view/login-view.jsx",
+                                                                    lineNumber: 115
+                                                                },
+                                                                __self: this,
+                                                                children: "Don't have an account?"
+                                                            }),
+                                                            /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
+                                                                xs: 10,
+                                                                sm: 8,
+                                                                lg: 8,
+                                                                variant: "dark",
+                                                                __source: {
+                                                                    fileName: "src/components/login-view/login-view.jsx",
+                                                                    lineNumber: 116
+                                                                },
+                                                                __self: this,
+                                                                children: "Sign Up"
+                                                            })
+                                                        ]
+                                                    }),
+                                                    /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                                                        xs: 10,
+                                                        sm: 8,
+                                                        lg: 8,
+                                                        style: {
+                                                            padding: "5vh"
+                                                        },
+                                                        __source: {
+                                                            fileName: "src/components/login-view/login-view.jsx",
+                                                            lineNumber: 120
+                                                        },
+                                                        __self: this,
+                                                        children: /*#__PURE__*/ _jsxRuntime.jsxs(_rowDefault.default, {
+                                                            __source: {
+                                                                fileName: "src/components/login-view/login-view.jsx",
+                                                                lineNumber: 121
+                                                            },
+                                                            __self: this,
+                                                            children: [
+                                                                /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                                                                    xs: 6,
+                                                                    style: {
+                                                                        textAlign: "right",
+                                                                        margin: "auto",
+                                                                        fontWeight: "bold"
+                                                                    },
+                                                                    __source: {
+                                                                        fileName: "src/components/login-view/login-view.jsx",
+                                                                        lineNumber: 122
+                                                                    },
+                                                                    __self: this,
+                                                                    children: "Project links:"
+                                                                }),
+                                                                /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
+                                                                    xs: 6,
+                                                                    className: "align-items-center align-content-center",
+                                                                    __source: {
+                                                                        fileName: "src/components/login-view/login-view.jsx",
+                                                                        lineNumber: 125
+                                                                    },
+                                                                    __self: this,
+                                                                    children: [
+                                                                        /*#__PURE__*/ _jsxRuntime.jsx("a", {
+                                                                            href: "#",
+                                                                            rel: "link to github of proyect",
+                                                                            target: "_blank",
+                                                                            style: {
+                                                                                color: "#212529",
+                                                                                paddingRight: '10px'
+                                                                            },
+                                                                            __source: {
+                                                                                fileName: "src/components/login-view/login-view.jsx",
+                                                                                lineNumber: 126
+                                                                            },
+                                                                            __self: this,
+                                                                            children: /*#__PURE__*/ _jsxRuntime.jsx("svg", {
+                                                                                xmlns: "http://www.w3.org/2000/svg",
+                                                                                width: "32",
+                                                                                height: "32",
+                                                                                fill: "currentColor",
+                                                                                className: "bi bi-github",
+                                                                                viewBox: "0 0 16 16",
+                                                                                __source: {
+                                                                                    fileName: "src/components/login-view/login-view.jsx",
+                                                                                    lineNumber: 127
+                                                                                },
+                                                                                __self: this,
+                                                                                children: /*#__PURE__*/ _jsxRuntime.jsx("path", {
+                                                                                    d: "M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z",
+                                                                                    __source: {
+                                                                                        fileName: "src/components/login-view/login-view.jsx",
+                                                                                        lineNumber: 128
+                                                                                    },
+                                                                                    __self: this
+                                                                                })
+                                                                            })
+                                                                        }),
+                                                                        /*#__PURE__*/ _jsxRuntime.jsx("a", {
+                                                                            href: "#",
+                                                                            rel: "link to github of proyect",
+                                                                            target: "_blank",
+                                                                            style: {
+                                                                                color: "#212529"
+                                                                            },
+                                                                            __source: {
+                                                                                fileName: "src/components/login-view/login-view.jsx",
+                                                                                lineNumber: 131
+                                                                            },
+                                                                            __self: this,
+                                                                            children: /*#__PURE__*/ _jsxRuntime.jsx("svg", {
+                                                                                xmlns: "http://www.w3.org/2000/svg",
+                                                                                width: "32",
+                                                                                height: "32",
+                                                                                fill: "currentColor",
+                                                                                className: "bi bi-file-earmark-text-fill",
+                                                                                viewBox: "0 0 16 16",
+                                                                                __source: {
+                                                                                    fileName: "src/components/login-view/login-view.jsx",
+                                                                                    lineNumber: 132
+                                                                                },
+                                                                                __self: this,
+                                                                                children: /*#__PURE__*/ _jsxRuntime.jsx("path", {
+                                                                                    d: "M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM4.5 9a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM4 10.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 1 0-1h4a.5.5 0 0 1 0 1h-4z",
+                                                                                    __source: {
+                                                                                        fileName: "src/components/login-view/login-view.jsx",
+                                                                                        lineNumber: 133
+                                                                                    },
+                                                                                    __self: this
+                                                                                })
+                                                                            })
+                                                                        })
+                                                                    ]
+                                                                })
+                                                            ]
+                                                        })
+                                                    })
+                                                ]
+                                            })
+                                        })
+                                    })
+                                ]
+                            })
+                        })
+                    ]
+                })
+            ]
+        })
     }));
 }
 _s(LoginView, "9FY2cPL9VBDmuhjwpF2ik6flsHs=");
@@ -42331,7 +42780,7 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap/Form":"5ykgY","react-bootstrap/Button":"9CzHT","@parcel/transformer-js/src/esmodule-helpers.js":"dRPCt","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"l3WWw","react-bootstrap/FloatingLabel":"27LBy","react-bootstrap/Container":"2PRIq","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","./login-view.scss":"lS4BK","../../index.scss":"jUTZ8"}],"lS4BK":[function() {},{}],"jUTZ8":[function() {},{}],"6EiBJ":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap/Form":"5ykgY","react-bootstrap/Button":"9CzHT","react-bootstrap/FloatingLabel":"27LBy","react-bootstrap/Container":"2PRIq","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","./login-view.scss":"lS4BK","../../index.scss":"jUTZ8","@parcel/transformer-js/src/esmodule-helpers.js":"dRPCt","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"l3WWw"}],"lS4BK":[function() {},{}],"jUTZ8":[function() {},{}],"6EiBJ":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$4249 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
