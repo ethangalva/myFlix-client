@@ -1,6 +1,15 @@
-import React, { useState } from 'react';
+import React, {useState} from "react";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import FloatingLabel from "react-bootstrap/FloatingLabel";
+// remove after touchups
+
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
+import './login-view.scss';
+import '../../index.scss'
 
 export function LoginView(props) {
     // assigns default values to username/password

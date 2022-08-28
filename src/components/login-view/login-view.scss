@@ -1,0 +1,77 @@
+body, html {
+    height: 100%;
+}
+.background-image {
+    background-image: url(../img/register-background.jpg);
+    // border-top-right-radius: 25px;
+    // border-bottom-right-radius: 25px;
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+// ----- Top corner
+.inverted-border-radius-top {
+    position: relative; /* Add position relative so the pseudo element will origin off this with position absolute */
+}
+/* The newly created pseudo element */
+.inverted-border-radius-top::before {
+    content: "";
+    position: absolute;
+    
+    background-color: transparent;
+    left: -62px;
+    height: 50px;
+    width: 50px;
+    border-top-right-radius: 25px;
+    box-shadow: 0 -25px #e2e2e4, 15px 0 #e2e2e4, 20px -20px #e2e2e4; /* This is where the magic happens! */
+}
+// ----- Bottom corner
+.inverted-border-radius-bottom {
+    position: fixed; /* Add position relative so the pseudo element will origin off this with position absolute */
+    bottom: 0;
+}
+/* The newly created pseudo element */
+.inverted-border-radius-bottom::before {
+    content: "";
+    position: absolute;
+    
+    background-color: transparent;
+    top: -50px;
+    left: -62px;
+    height: 50px;
+    width: 50px;
+    border-bottom-right-radius: 25px;
+    box-shadow: 0 25px #e2e2e4, 15px 0 #e2e2e4, 20px 20px #e2e2e4; /* This is where the magic happens! */
+}
+
+
+
+.main-row {
+    background-image: url(../img/svg-blob/blobanimation.svg), url(../img/svg-blob/blobanimation-2.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-position: top -150px right -175px, bottom -175px left -150px;
+    background-size: 400px, 350px;
+}
+
+// remove bottom left blob if screen width is over md breakpoint
+@media only screen and (min-width: 992px) {
+    .main-row {
+        background-image: url(../img/svg-blob/blobanimation.svg);
+        background-repeat: no-repeat;
+        background-position: top -150px right -175px;
+        background-size: 400px;
+    }
+}
+
+// media query to move from center/left positioning for FORM ROW alone
+@media only screen and (min-width: 1px) {
+    .form-row {
+        justify-content: center !important;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .form-row {
+        justify-content: left !important;
+    }
+}

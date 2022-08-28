@@ -76,4 +76,78 @@ body, html {
   background-color: #e2e2e4;
   box-shadow: -20px 0px 80px 5px rgba(0, 0, 0, 0.5);
 }
+body, html {
+  height: 100%;
+}
+
+.background-image {
+  background-image: url(register-background.965e2332.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.inverted-border-radius-top {
+  position: relative; /* Add position relative so the pseudo element will origin off this with position absolute */
+}
+
+/* The newly created pseudo element */
+
+.inverted-border-radius-top::before {
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  left: -62px;
+  height: 50px;
+  width: 50px;
+  border-top-right-radius: 25px;
+  box-shadow: 0 -25px #e2e2e4, 15px 0 #e2e2e4, 20px -20px #e2e2e4; /* This is where the magic happens! */
+}
+
+.inverted-border-radius-bottom {
+  position: fixed; /* Add position relative so the pseudo element will origin off this with position absolute */
+  bottom: 0;
+}
+
+/* The newly created pseudo element */
+
+.inverted-border-radius-bottom::before {
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  top: -50px;
+  left: -62px;
+  height: 50px;
+  width: 50px;
+  border-bottom-right-radius: 25px;
+  box-shadow: 0 25px #e2e2e4, 15px 0 #e2e2e4, 20px 20px #e2e2e4; /* This is where the magic happens! */
+}
+
+.main-row {
+  background-image: url(blobanimation.01cf1ede.svg), url(blobanimation-2.cd32545f.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: top -150px right -175px, bottom -175px left -150px;
+  background-size: 400px, 350px;
+}
+
+@media only screen and (min-width: 992px) {
+  .main-row {
+    background-image: url(blobanimation.01cf1ede.svg);
+    background-repeat: no-repeat;
+    background-position: top -150px right -175px;
+    background-size: 400px;
+  }
+}
+
+@media only screen and (min-width: 1px) {
+  .form-row {
+    justify-content: center !important;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .form-row {
+    justify-content: left !important;
+  }
+}
 /*# sourceMappingURL=index.1f14ec93.css.map */
