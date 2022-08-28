@@ -55,11 +55,23 @@ body, html {
 }
 
 // remove bottom left blob if screen width is over md breakpoint
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 992px) {
     .main-row {
         background-image: url(../img/svg-blob/blobanimation.svg);
         background-repeat: no-repeat;
         background-position: top -150px right -175px;
         background-size: 400px;
+    }
+}
+
+// media query to move from center/left positioning for FORM ROW alone
+@media only screen and (min-width: 1px) {
+    .form-row {
+        justify-content: center !important;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .form-row {
+        justify-content: left !important;
     }
 }

@@ -52,7 +52,7 @@ body, html {
   background-size: 400px, 350px;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 992px) {
   .main-row {
     background-image: url(blobanimation.01cf1ede.svg);
     background-repeat: no-repeat;
@@ -60,7 +60,20 @@ body, html {
     background-size: 400px;
   }
 }
+
+@media only screen and (min-width: 1px) {
+  .form-row {
+    justify-content: center !important;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .form-row {
+    justify-content: left !important;
+  }
+}
 .bg-color {
   background-color: #e2e2e4;
+  box-shadow: -20px 0px 80px 5px rgba(0, 0, 0, 0.5);
 }
 /*# sourceMappingURL=index.1f14ec93.css.map */
