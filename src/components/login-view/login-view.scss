@@ -2,7 +2,7 @@ body, html {
     height: 100%;
 }
 .background-image {
-    background-image: url(../img/register-background.jpg);
+    // background-image: url(../img/register-background.jpg);
     // border-top-right-radius: 25px;
     // border-bottom-right-radius: 25px;
     background-position: center;
@@ -57,7 +57,7 @@ body, html {
 // remove bottom left blob if screen width is over md breakpoint
 @media only screen and (min-width: 992px) {
     .main-row {
-        background-image: url(../img/svg-blob/blobanimation.svg);
+        background-image: none;
         background-repeat: no-repeat;
         background-position: top -150px right -175px;
         background-size: 400px;

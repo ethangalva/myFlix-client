@@ -2,14 +2,14 @@ import React, {useState} from "react";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import FloatingLabel from "react-bootstrap/FloatingLabel";
-// remove after touchups
+// remove after touchups'
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 import './register-view.scss';
-import '../../index.scss'
+import '../../index.scss';
 
 export function RegisterView(props) {
     const [ RegisterUsername, setRegistered] = useState('')
@@ -31,14 +31,14 @@ export function RegisterView(props) {
                 
                 
                 {/* col 1/4 image (desktop only) */}
-                <Col xs={0} md={0} lg={3} xl={3} className="d-none d-lg-block background-image" />
+                <Col xs={0} md={0} lg={3} xl={3} className="d-none d-lg-block background-image" style={{backgroundImage: "url:(${require(../img/register-background-2.jpg).default}) "}} />
                 
                 {/* actual contents */}
                 <Col xs={12} md={12} lg={9} xl={9} className="bg-color gap-2" >
                     {/* corners for the left sides of this col */}
 
-                    <div className="inverted-border-radius-top d-none d-xl-block" />
-                    <div className="inverted-border-radius-bottom d-none d-xl-block" />
+                    <div className="inverted-border-radius-top d-none d-lg-block" />
+                    <div className="inverted-border-radius-bottom d-none d-lg-block" />
                     
 
                     {/* White space */}

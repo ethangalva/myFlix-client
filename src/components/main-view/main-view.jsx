@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
+import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
@@ -8,6 +9,10 @@ import { RegisterView } from '../register-view/register-view';
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
+import { NavbarView } from '../navbar-view/navbar-view'
+import { LandingPage } from '../landing-page/landing-page'
+
+import '../../index.scss';
 
 export class MainView extends React.Component {
 
@@ -55,17 +60,20 @@ export class MainView extends React.Component {
     render() {
         const { movies, selectedMovie, user, UsernameRegistered } = this.state;
 
-        //forced to register after refresh for testing purposes
-        if (!UsernameRegistered) return <RegisterView onRegister={UsernameRegistered => this.onRegister(UsernameRegistered)} />
+      // remove comments after done with main view
+        // //forced to register after refresh for testing purposes
+        // if (!UsernameRegistered) return <RegisterView onRegister={UsernameRegistered => this.onRegister(UsernameRegistered)} />
 
-        // if no user then the LoginView is rendered. if there is an user logged in, the user details are passed as a prop to the LoginView
-        if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} /> 
+        // // if no user then the LoginView is rendered. if there is an user logged in, the user details are passed as a prop to the LoginView
+        // if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} /> 
 
         if (movies.length === 0) return <div className="main-view" />;
       
         return (
-          <Row className='justify-content-md-center main-view' >
-            {selectedMovie
+          <Row className='justify-content-md-center main-view'>
+            <NavbarView />
+            <LandingPage />
+            {/* {selectedMovie
               ? ( 
                 <Col md={8}>
                   <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
@@ -76,7 +84,7 @@ export class MainView extends React.Component {
                     <MovieCard key={movie._id} movie={movie} onMovieClick={(movie) => { this.setSelectedMovie(movie) }}/>
                   </Col>
                 ))
-            }
+            } */}
           </Row>
         );
       }

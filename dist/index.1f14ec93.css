@@ -3,7 +3,7 @@ body, html {
 }
 
 .background-image {
-  background-image: url(register-background.965e2332.jpg);
+  background-image: url(register.70322f35.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -54,7 +54,7 @@ body, html {
 
 @media only screen and (min-width: 992px) {
   .main-row {
-    background-image: url(blobanimation.01cf1ede.svg);
+    background-image: none;
     background-repeat: no-repeat;
     background-position: top -150px right -175px;
     background-size: 400px;
@@ -76,12 +76,15 @@ body, html {
   background-color: #e2e2e4;
   box-shadow: -20px 0px 80px 5px rgba(0, 0, 0, 0.5);
 }
+
+.center-hor {
+  margin: auto;
+}
 body, html {
   height: 100%;
 }
 
 .background-image {
-  background-image: url(register-background.965e2332.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -132,7 +135,7 @@ body, html {
 
 @media only screen and (min-width: 992px) {
   .main-row {
-    background-image: url(blobanimation.01cf1ede.svg);
+    background-image: none;
     background-repeat: no-repeat;
     background-position: top -150px right -175px;
     background-size: 400px;
@@ -149,5 +152,12 @@ body, html {
   .form-row {
     justify-content: left !important;
   }
+}
+
+.bg {
+  background-image: url(poster.4bf5f7a1.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 /*# sourceMappingURL=index.1f14ec93.css.map */

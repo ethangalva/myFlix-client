@@ -38169,6 +38169,8 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _container = require("react-bootstrap/Container");
+var _containerDefault = parcelHelpers.interopDefault(_container);
 var _row = require("react-bootstrap/Row");
 var _rowDefault = parcelHelpers.interopDefault(_row);
 var _col = require("react-bootstrap/Col");
@@ -38177,6 +38179,9 @@ var _registerView = require("../register-view/register-view");
 var _loginView = require("../login-view/login-view");
 var _movieCard = require("../movie-card/movie-card");
 var _movieView = require("../movie-view/movie-view");
+var _navbarView = require("../navbar-view/navbar-view");
+var _landingPage = require("../landing-page/landing-page");
+var _indexScss = require("../../index.scss");
 class MainView extends _reactDefault.default.Component {
     constructor(){
         super();
@@ -38214,79 +38219,42 @@ class MainView extends _reactDefault.default.Component {
     }
     render() {
         const { movies , selectedMovie , user , UsernameRegistered  } = this.state;
-        //forced to register after refresh for testing purposes
-        if (!UsernameRegistered) return(/*#__PURE__*/ _jsxRuntime.jsx(_registerView.RegisterView, {
-            onRegister: (UsernameRegistered1)=>this.onRegister(UsernameRegistered1)
-            ,
-            __source: {
-                fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 59
-            },
-            __self: this
-        }));
-        // if no user then the LoginView is rendered. if there is an user logged in, the user details are passed as a prop to the LoginView
-        if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
-            onLoggedIn: (user1)=>this.onLoggedIn(user1)
-            ,
-            __source: {
-                fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 62
-            },
-            __self: this
-        }));
+        // remove comments after done with main view
+        // //forced to register after refresh for testing purposes
+        // if (!UsernameRegistered) return <RegisterView onRegister={UsernameRegistered => this.onRegister(UsernameRegistered)} />
+        // // if no user then the LoginView is rendered. if there is an user logged in, the user details are passed as a prop to the LoginView
+        // if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} /> 
         if (movies.length === 0) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 64
+                lineNumber: 70
             },
             __self: this
         }));
-        return(/*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+        return(/*#__PURE__*/ _jsxRuntime.jsxs(_rowDefault.default, {
             className: "justify-content-md-center main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 67
+                lineNumber: 73
             },
             __self: this,
-            children: selectedMovie ? /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                md: 8,
-                __source: {
-                    fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 70
-                },
-                __self: this,
-                children: /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
-                    movie: selectedMovie,
-                    onBackClick: (newSelectedMovie)=>{
-                        this.setSelectedMovie(newSelectedMovie);
-                    },
+            children: [
+                /*#__PURE__*/ _jsxRuntime.jsx(_navbarView.NavbarView, {
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 71
+                        lineNumber: 74
                     },
                     __self: this
-                })
-            }) : movies.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                    md: 3,
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx(_landingPage.LandingPage, {
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
                         lineNumber: 75
                     },
-                    __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
-                        movie: movie,
-                        onMovieClick: (movie1)=>{
-                            this.setSelectedMovie(movie1);
-                        },
-                        __source: {
-                            fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 76
-                        },
-                        __self: this
-                    }, movie._id)
+                    __self: this
                 })
-            )
+            ]
         }));
     }
 }
@@ -38296,7 +38264,7 @@ class MainView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","../register-view/register-view":"F9ahz","../login-view/login-view":"054li","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","@parcel/transformer-js/src/esmodule-helpers.js":"dRPCt","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"l3WWw"}],"iYoWk":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","react-bootstrap/Container":"2PRIq","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","../register-view/register-view":"F9ahz","../login-view/login-view":"054li","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","../navbar-view/navbar-view":"j0Dt2","../../index.scss":"jUTZ8","@parcel/transformer-js/src/esmodule-helpers.js":"dRPCt","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"l3WWw","../landing-page/landing-page":"lhwvQ"}],"iYoWk":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"3QmO2"}],"3QmO2":[function(require,module,exports) {
@@ -41502,7 +41470,7 @@ var _button = require("react-bootstrap/Button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
 var _floatingLabel = require("react-bootstrap/FloatingLabel");
 var _floatingLabelDefault = parcelHelpers.interopDefault(_floatingLabel);
-// remove after touchups
+// remove after touchups'
 var _container = require("react-bootstrap/Container");
 var _containerDefault = parcelHelpers.interopDefault(_container);
 var _row = require("react-bootstrap/Row");
@@ -41545,6 +41513,9 @@ function RegisterView(props) {
                     lg: 3,
                     xl: 3,
                     className: "d-none d-lg-block background-image",
+                    style: {
+                        backgroundImage: "url:(${require(../img/register-background-2.jpg).default}) "
+                    },
                     __source: {
                         fileName: "src/components/register-view/register-view.jsx",
                         lineNumber: 34
@@ -41564,7 +41535,7 @@ function RegisterView(props) {
                     __self: this,
                     children: [
                         /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                            className: "inverted-border-radius-top d-none d-xl-block",
+                            className: "inverted-border-radius-top d-none d-lg-block",
                             __source: {
                                 fileName: "src/components/register-view/register-view.jsx",
                                 lineNumber: 40
@@ -41572,7 +41543,7 @@ function RegisterView(props) {
                             __self: this
                         }),
                         /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                            className: "inverted-border-radius-bottom d-none d-xl-block",
+                            className: "inverted-border-radius-bottom d-none d-lg-block",
                             __source: {
                                 fileName: "src/components/register-view/register-view.jsx",
                                 lineNumber: 41
@@ -42812,6 +42783,7 @@ class MovieCard extends _reactDefault.default.Component {
             children: [
                 /*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default.Img, {
                     variant: "top",
+                    crossOrigin: "src={movie.ImagePath}",
                     src: movie.ImagePath,
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
@@ -42991,6 +42963,264 @@ class MovieView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"dRPCt","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"l3WWw"}],"jUTZ8":[function() {},{}]},["aLBQR","3BOSB","dLPEP"], "dLPEP", "parcelRequireaec4")
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"dRPCt","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"l3WWw"}],"j0Dt2":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$469c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$469c.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "NavbarView", ()=>NavbarView
+);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _nav = require("react-bootstrap/Nav");
+var _navDefault = parcelHelpers.interopDefault(_nav);
+var _navbar = require("react-bootstrap/Navbar");
+var _navbarDefault = parcelHelpers.interopDefault(_navbar);
+var _container = require("react-bootstrap/Container");
+var _containerDefault = parcelHelpers.interopDefault(_container);
+var _navbarViewScss = require("./navbar-view.scss");
+var _indexScss = require("../../index.scss");
+function NavbarView(props) {
+    return(// change variant to light if it fits better [REVISION]
+    /*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default, {
+        collapseOnSelect: true,
+        expand: "lg",
+        variant: "dark",
+        sticky: "top",
+        style: {
+            marginTop: "-56px"
+        },
+        __source: {
+            fileName: "src/components/navbar-view/navbar-view.jsx",
+            lineNumber: 14
+        },
+        __self: this,
+        children: /*#__PURE__*/ _jsxRuntime.jsxs(_containerDefault.default, {
+            __source: {
+                fileName: "src/components/navbar-view/navbar-view.jsx",
+                lineNumber: 15
+            },
+            __self: this,
+            children: [
+                /*#__PURE__*/ _jsxRuntime.jsxs(_navbarDefault.default.Brand, {
+                    href: "#home",
+                    className: "d-flex gap-2 align-items-center",
+                    __source: {
+                        fileName: "src/components/navbar-view/navbar-view.jsx",
+                        lineNumber: 16
+                    },
+                    __self: this,
+                    children: [
+                        /*#__PURE__*/ _jsxRuntime.jsx("svg", {
+                            xmlns: "http://www.w3.org/2000/svg",
+                            width: "24",
+                            height: "24",
+                            fill: "currentColor",
+                            className: "bi bi-x-diamond-fill",
+                            viewBox: "0 0 16 16",
+                            __source: {
+                                fileName: "src/components/navbar-view/navbar-view.jsx",
+                                lineNumber: 17
+                            },
+                            __self: this,
+                            children: /*#__PURE__*/ _jsxRuntime.jsx("path", {
+                                d: "M9.05.435c-.58-.58-1.52-.58-2.1 0L4.047 3.339 8 7.293l3.954-3.954L9.049.435zm3.61 3.611L8.708 8l3.954 3.954 2.904-2.905c.58-.58.58-1.519 0-2.098l-2.904-2.905zm-.706 8.614L8 8.708l-3.954 3.954 2.905 2.904c.58.58 1.519.58 2.098 0l2.905-2.904zm-8.614-.706L7.292 8 3.339 4.046.435 6.951c-.58.58-.58 1.519 0 2.098l2.904 2.905z",
+                                __source: {
+                                    fileName: "src/components/navbar-view/navbar-view.jsx",
+                                    lineNumber: 18
+                                },
+                                __self: this
+                            })
+                        }),
+                        "myFlix"
+                    ]
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default.Toggle, {
+                    "aria-controls": "responsive-navbar-nav",
+                    __source: {
+                        fileName: "src/components/navbar-view/navbar-view.jsx",
+                        lineNumber: 22
+                    },
+                    __self: this
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default.Collapse, {
+                    id: "responsive-navbar-nav",
+                    __source: {
+                        fileName: "src/components/navbar-view/navbar-view.jsx",
+                        lineNumber: 23
+                    },
+                    __self: this,
+                    children: /*#__PURE__*/ _jsxRuntime.jsxs(_navDefault.default, {
+                        className: "ms-auto",
+                        __source: {
+                            fileName: "src/components/navbar-view/navbar-view.jsx",
+                            lineNumber: 24
+                        },
+                        __self: this,
+                        children: [
+                            /*#__PURE__*/ _jsxRuntime.jsxs(_navDefault.default.Link, {
+                                href: "#features",
+                                className: "center-hor d-flex gap-2 align-items-center",
+                                style: {
+                                    color: "white"
+                                },
+                                __source: {
+                                    fileName: "src/components/navbar-view/navbar-view.jsx",
+                                    lineNumber: 25
+                                },
+                                __self: this,
+                                children: [
+                                    /*#__PURE__*/ _jsxRuntime.jsxs("svg", {
+                                        xmlns: "http://www.w3.org/2000/svg",
+                                        width: "16",
+                                        height: "16",
+                                        fill: "currentColor",
+                                        class: "bi bi-person-circle",
+                                        viewBox: "0 0 16 16",
+                                        __source: {
+                                            fileName: "src/components/navbar-view/navbar-view.jsx",
+                                            lineNumber: 26
+                                        },
+                                        __self: this,
+                                        children: [
+                                            /*#__PURE__*/ _jsxRuntime.jsx("path", {
+                                                d: "M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z",
+                                                __source: {
+                                                    fileName: "src/components/navbar-view/navbar-view.jsx",
+                                                    lineNumber: 27
+                                                },
+                                                __self: this
+                                            }),
+                                            /*#__PURE__*/ _jsxRuntime.jsx("path", {
+                                                "fill-rule": "evenodd",
+                                                d: "M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z",
+                                                __source: {
+                                                    fileName: "src/components/navbar-view/navbar-view.jsx",
+                                                    lineNumber: 28
+                                                },
+                                                __self: this
+                                            })
+                                        ]
+                                    }),
+                                    "Profile"
+                                ]
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsxs(_navDefault.default.Link, {
+                                href: "#pricing",
+                                className: "center-hor d-flex gap-2 align-items-center",
+                                style: {
+                                    color: "white"
+                                },
+                                __source: {
+                                    fileName: "src/components/navbar-view/navbar-view.jsx",
+                                    lineNumber: 32
+                                },
+                                __self: this,
+                                children: [
+                                    /*#__PURE__*/ _jsxRuntime.jsx("svg", {
+                                        xmlns: "http://www.w3.org/2000/svg",
+                                        width: "16",
+                                        height: "16",
+                                        fill: "currentColor",
+                                        className: "bi bi-toggles",
+                                        viewBox: "0 0 16 16",
+                                        __source: {
+                                            fileName: "src/components/navbar-view/navbar-view.jsx",
+                                            lineNumber: 33
+                                        },
+                                        __self: this,
+                                        children: /*#__PURE__*/ _jsxRuntime.jsx("path", {
+                                            d: "M4.5 9a3.5 3.5 0 1 0 0 7h7a3.5 3.5 0 1 0 0-7h-7zm7 6a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm-7-14a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zm2.45 0A3.49 3.49 0 0 1 8 3.5 3.49 3.49 0 0 1 6.95 6h4.55a2.5 2.5 0 0 0 0-5H6.95zM4.5 0h7a3.5 3.5 0 1 1 0 7h-7a3.5 3.5 0 1 1 0-7z",
+                                            __source: {
+                                                fileName: "src/components/navbar-view/navbar-view.jsx",
+                                                lineNumber: 34
+                                            },
+                                            __self: this
+                                        })
+                                    }),
+                                    "Settings"
+                                ]
+                            })
+                        ]
+                    })
+                })
+            ]
+        })
+    }));
+}
+_c = NavbarView;
+var _c;
+$RefreshReg$(_c, "NavbarView");
+
+  $parcel$ReactRefreshHelpers$469c.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap/Nav":"io07g","react-bootstrap/Navbar":"eYZQl","react-bootstrap/Container":"2PRIq","../../index.scss":"jUTZ8","@parcel/transformer-js/src/esmodule-helpers.js":"dRPCt","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"l3WWw","./navbar-view.scss":"eDP1C"}],"jUTZ8":[function() {},{}],"eDP1C":[function() {},{}],"jUTZ8":[function() {},{}],"lhwvQ":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$d6d0 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$d6d0.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "LandingPage", ()=>LandingPage
+);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _button = require("react-bootstrap/Button");
+var _buttonDefault = parcelHelpers.interopDefault(_button);
+var _container = require("react-bootstrap/Container");
+var _containerDefault = parcelHelpers.interopDefault(_container);
+var _row = require("react-bootstrap/Row");
+var _rowDefault = parcelHelpers.interopDefault(_row);
+var _col = require("react-bootstrap/Col");
+var _colDefault = parcelHelpers.interopDefault(_col);
+var _landingPageScss = require("./landing-page.scss");
+function LandingPage(props) {
+    return(/*#__PURE__*/ _jsxRuntime.jsx(_containerDefault.default, {
+        fluid: true,
+        __source: {
+            fileName: "src/components/landing-page/landing-page.jsx",
+            lineNumber: 13
+        },
+        __self: this,
+        children: /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+            className: "vh-100 justify-content-center container-row",
+            __source: {
+                fileName: "src/components/landing-page/landing-page.jsx",
+                lineNumber: 14
+            },
+            __self: this,
+            children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                xs: 12,
+                className: "bg",
+                __source: {
+                    fileName: "src/components/landing-page/landing-page.jsx",
+                    lineNumber: 15
+                },
+                __self: this
+            })
+        })
+    }));
+}
+_c = LandingPage;
+var _c;
+$RefreshReg$(_c, "LandingPage");
+
+  $parcel$ReactRefreshHelpers$d6d0.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap/Button":"9CzHT","react-bootstrap/Container":"2PRIq","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","@parcel/transformer-js/src/esmodule-helpers.js":"dRPCt","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"l3WWw","./landing-page.scss":"1Q8E9"}],"1Q8E9":[function() {},{}],"jUTZ8":[function() {},{}]},["aLBQR","3BOSB","dLPEP"], "dLPEP", "parcelRequireaec4")
 
 //# sourceMappingURL=index.6701a6e1.js.map
