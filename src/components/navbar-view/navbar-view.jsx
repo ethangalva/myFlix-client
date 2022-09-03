@@ -11,7 +11,7 @@ export function NavbarView(props) {
 
     return (
         // change variant to light if it fits better [REVISION]
-        <Navbar collapseOnSelect expand="lg" variant="dark" sticky="top" style={{marginTop: "-56px"}}>
+        <Navbar collapseOnSelect expand="lg" variant="dark" bg="dark" fixed="top" style={{marginTop: ""}}>
             <Container>
                 <Navbar.Brand href="#home" className="d-flex gap-2 align-items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-x-diamond-fill" viewBox="0 0 16 16"  >

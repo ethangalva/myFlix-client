@@ -1,0 +1,15 @@
+.carousel-indicators {
+    position: absolute;
+    right: 0;
+    top: 0 !important;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: right !important;
+    padding: 0;
+    margin-right: 15%;
+    margin-bottom: 0rem !important;
+    margin-top: -2rem;
+    margin-left: 15%;
+    list-style: none;
+}

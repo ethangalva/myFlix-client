@@ -3,7 +3,7 @@ body, html {
 }
 
 .background-image {
-  background-image: url(register.70322f35.jpg);
+  background-image: url(sidePicture.be18345d.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -153,11 +153,40 @@ body, html {
     justify-content: left !important;
   }
 }
-
-.bg {
+.big-movie-display {
   background-image: url(poster.4bf5f7a1.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  box-shadow: 0px -40px 20px 0px #141414 inset, 0px -100px 100px 0px #141414 inset, 0px -150px 100px -75px #141414 inset;
+}
+
+.font-roboto {
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.logo {
+  background: rgb(229, 9, 20);
+  background: linear-gradient(90deg, rgb(229, 9, 20) 0%, rgb(107, 13, 17) 47%, rgb(0, 0, 0) 100%);
+}
+.carousel-indicators {
+  position: absolute;
+  right: 0;
+  top: 0 !important;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: right !important;
+  padding: 0;
+  margin-right: 15%;
+  margin-bottom: 0rem !important;
+  margin-top: -2rem;
+  margin-left: 15%;
+  list-style: none;
+}
+.movieThumbnailRow {
+  background-color: #141414;
+  padding-right: 1em;
+  padding-left: 1em;
 }
 /*# sourceMappingURL=index.1f14ec93.css.map */

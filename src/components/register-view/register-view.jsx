@@ -28,8 +28,7 @@ export function RegisterView(props) {
     return (
         <Container fluid className="bg-color">
             <Row className="vh-100 justify-content-center container-row">
-                
-                
+                    
                 {/* col 1/4 image (desktop only) */}
                 <Col xs={0} md={0} lg={3} xl={3} className="d-none d-lg-block background-image" style={{backgroundImage: "url:(${require(../img/register-background-2.jpg).default}) "}} />
                 
