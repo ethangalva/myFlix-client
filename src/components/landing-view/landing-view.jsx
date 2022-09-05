@@ -21,7 +21,7 @@ export function LandingView(props) {
 
     return (
         // actual contents
-        <Col xs={12} md={12} lg={12} xl={12}>
+        <Col xs={12} md={12} lg={12} xl={12} style={{height: "100vh"}}>
             <Row style={{position: "relative"}}>
                 <Navbar collapseOnSelect expand="lg" bg="" variant="dark" style={{position: "absolute"}}>
                     <Container>
@@ -36,9 +36,9 @@ export function LandingView(props) {
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="ms-auto">
                                 <Nav.Link href="#features" className='center-hor d-flex gap-2 align-items-center' style={{color: "white"}}>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-person-circle" viewBox="0 0 16 16">
                                         <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-                                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                                        <path fillRule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
                                     </svg>
                                     Profile
                                 </Nav.Link>
@@ -62,7 +62,7 @@ export function LandingView(props) {
                                     <h1 style={{fontWeight: "bold", fontSize: "4em", margin: "0px"}} className="font-roboto ">Dune</h1>
                                 </Col>
                                 <Col className="font-roboto d-flex align-items-center gap-1">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#f5c51c" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#f5c51c" className="bi bi-star-fill" viewBox="0 0 16 16">
                                         <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                                     </svg>
                                     8.0/10 | 604k
@@ -76,7 +76,7 @@ export function LandingView(props) {
                                     <Row className="gap-2 align-items-center align-content-center gap-lg-0">
                                         <Col xs={12} lg={6}>
                                             <Button xs={12} variant='primary' type='submit' style={{width: "100%"}} className="font-roboto d-flex align-items-center gap-1 justify-content-center">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-play-fill" viewBox="0 0 16 16">
                                                     <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
                                                 </svg>
                                                 PLAY NOW
@@ -87,14 +87,9 @@ export function LandingView(props) {
                                                 TRAILER
                                             </Button>
                                         </Col>
-                                        
-                                        {/* <Button xs={10} sm={10} lg={6} variant='secondary' style={{backgroundColor: "#6c757d7d"}}>
-                                            TRAILER
-                                        </Button> */}
                                     </Row>  
                                 </Col>
                             </Col>
-                            <Col sm={12} md={6} />    
 
 
 

@@ -38242,16 +38242,17 @@ class MainView extends _reactDefault.default.Component {
             __self: this,
             children: [
                 /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
-                    className: "vh-100 justify-content-center container-row ",
+                    className: "justify-content-center container-row",
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 75
+                        lineNumber: 76
                     },
                     __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsx(_landingView.LandingView, {
+                    children: selectedMovie ? /*#__PURE__*/ _jsxRuntime.jsx(_jsxRuntime.Fragment, {
+                    }) : /*#__PURE__*/ _jsxRuntime.jsx(_landingView.LandingView, {
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 76
+                            lineNumber: 81
                         },
                         __self: this
                     })
@@ -38260,14 +38261,17 @@ class MainView extends _reactDefault.default.Component {
                     className: "justify-content-center container-row movieThumbnailRow",
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 78
+                        lineNumber: 85
                     },
                     __self: this,
                     children: selectedMovie ? /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                        md: 8,
+                        xs: 12,
+                        style: {
+                            height: "100vh"
+                        },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 81
+                            lineNumber: 88
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
@@ -38277,7 +38281,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 82
+                                lineNumber: 89
                             },
                             __self: this
                         })
@@ -38287,12 +38291,13 @@ class MainView extends _reactDefault.default.Component {
                             lg: 3,
                             xl: 2,
                             style: {
-                                paddingRight: "3px",
-                                paddingLeft: "3px"
+                                paddingRight: ".25em",
+                                paddingLeft: ".25em"
                             },
+                            className: "movieCard-Parent",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 86
+                                lineNumber: 93
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
@@ -38302,7 +38307,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 87
+                                    lineNumber: 94
                                 },
                                 __self: this
                             }, movie._id)
@@ -42824,6 +42829,7 @@ var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _col = require("react-bootstrap/Col");
 var _colDefault = parcelHelpers.interopDefault(_col);
+var _movieCardScss = require("./movie-card.scss");
 class MovieCard extends _reactDefault.default.Component {
     render() {
         const { movie , onMovieClick  } = this.props;
@@ -42831,15 +42837,16 @@ class MovieCard extends _reactDefault.default.Component {
             xs: 12,
             style: {
                 aspectRatio: "16 / 9",
-                flexDirection: "column"
+                flexDirection: "column",
+                height: "100%"
             },
-            className: "d-flex align-items-center",
+            className: "d-flex align-items-center movieCard",
             type: "button",
             onClick: ()=>onMovieClick(movie)
             ,
             __source: {
                 fileName: "src/components/movie-card/movie-card.jsx",
-                lineNumber: 11
+                lineNumber: 13
             },
             __self: this,
             children: [
@@ -42851,18 +42858,20 @@ class MovieCard extends _reactDefault.default.Component {
                     },
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 12
+                        lineNumber: 14
                     },
                     __self: this
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsx("p", {
                     style: {
                         fontWeight: "bold",
-                        color: "rgb(160, 160, 160)"
+                        color: "rgb(160, 160, 160)",
+                        textAlign: "center",
+                        transition: "all .25s ease-in-out"
                     },
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 13
+                        lineNumber: 15
                     },
                     __self: this,
                     children: movie.Title
@@ -42876,7 +42885,11 @@ MovieCard.propTypes = {
         Title: _propTypesDefault.default.string.isRequired,
         Description: _propTypesDefault.default.string.isRequired,
         ImagePath: _propTypesDefault.default.string.isRequired,
-        _id: _propTypesDefault.default.string.isRequired
+        _id: _propTypesDefault.default.string.isRequired,
+        Rating: _propTypesDefault.default.shape({
+            Reviews: _propTypesDefault.default.string.isRequired,
+            Score: _propTypesDefault.default.string.isRequired
+        })
     }).isRequired,
     onMovieClick: _propTypesDefault.default.func.isRequired
 };
@@ -42886,7 +42899,7 @@ MovieCard.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap/Col":"fbam0","@parcel/transformer-js/src/esmodule-helpers.js":"dRPCt","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"l3WWw"}],"ikZdr":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap/Col":"fbam0","./movie-card.scss":"cF5gT","@parcel/transformer-js/src/esmodule-helpers.js":"dRPCt","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"l3WWw"}],"cF5gT":[function() {},{}],"ikZdr":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$3741 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -42900,101 +42913,84 @@ parcelHelpers.export(exports, "MovieView", ()=>MovieView
 var _jsxRuntime = require("react/jsx-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
+var _button = require("react-bootstrap/Button");
+var _buttonDefault = parcelHelpers.interopDefault(_button);
+var _container = require("react-bootstrap/Container");
+var _containerDefault = parcelHelpers.interopDefault(_container);
+var _row = require("react-bootstrap/Row");
+var _rowDefault = parcelHelpers.interopDefault(_row);
+var _col = require("react-bootstrap/Col");
+var _colDefault = parcelHelpers.interopDefault(_col);
+var _movieViewScss = require("./movie-view.scss");
+var _indexScss = require("../../index.scss");
 class MovieView extends _reactDefault.default.Component {
     render() {
         const { movie , onBackClick  } = this.props;
-        return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
-            className: "movie-view",
+        return(/*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+            className: "h-100 justify-content-center container-row movie-view",
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 9
+                lineNumber: 17
             },
             __self: this,
-            children: [
-                /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                    className: "movie-poster",
-                    __source: {
-                        fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 10
-                    },
-                    __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
-                        src: movie.ImagePath,
+            children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
+                xs: 12,
+                className: "d-flex padding-0 flex-direction-column",
+                __source: {
+                    fileName: "src/components/movie-view/movie-view.jsx",
+                    lineNumber: 18
+                },
+                __self: this,
+                children: [
+                    /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                        xs: 12,
+                        className: "movie-image",
                         __source: {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 11
+                            lineNumber: 20
                         },
-                        __self: this
+                        __self: this,
+                        children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                            crossOrigin: "src={movie.ImagePath}",
+                            src: movie.ImagePath,
+                            className: "img w-100",
+                            __source: {
+                                fileName: "src/components/movie-view/movie-view.jsx",
+                                lineNumber: 21
+                            },
+                            __self: this
+                        })
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                        xs: 12,
+                        __source: {
+                            fileName: "src/components/movie-view/movie-view.jsx",
+                            lineNumber: 24
+                        },
+                        __self: this,
+                        children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                            xs: 12,
+                            style: {
+                                padding: "3vh 1em"
+                            },
+                            __source: {
+                                fileName: "src/components/movie-view/movie-view.jsx",
+                                lineNumber: 26
+                            },
+                            __self: this,
+                            children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                                xs: 6,
+                                __source: {
+                                    fileName: "src/components/movie-view/movie-view.jsx",
+                                    lineNumber: 27
+                                },
+                                __self: this,
+                                children: "q wd"
+                            })
+                        })
                     })
-                }),
-                /*#__PURE__*/ _jsxRuntime.jsxs("div", {
-                    className: "movie-title",
-                    __source: {
-                        fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 13
-                    },
-                    __self: this,
-                    children: [
-                        /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                            className: "label",
-                            __source: {
-                                fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 14
-                            },
-                            __self: this,
-                            children: "Title: "
-                        }),
-                        /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                            className: "value",
-                            __source: {
-                                fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 15
-                            },
-                            __self: this,
-                            children: movie.Title
-                        })
-                    ]
-                }),
-                /*#__PURE__*/ _jsxRuntime.jsxs("div", {
-                    className: "movie-description",
-                    __source: {
-                        fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 17
-                    },
-                    __self: this,
-                    children: [
-                        /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                            className: "label",
-                            __source: {
-                                fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 18
-                            },
-                            __self: this,
-                            children: "Description: "
-                        }),
-                        /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                            className: "value",
-                            __source: {
-                                fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 19
-                            },
-                            __self: this,
-                            children: movie.Description
-                        })
-                    ]
-                }),
-                /*#__PURE__*/ _jsxRuntime.jsx("button", {
-                    onClick: ()=>{
-                        onBackClick(null);
-                    },
-                    __source: {
-                        fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 22
-                    },
-                    __self: this,
-                    children: "BACK"
-                })
-            ]
+                ]
+            })
         }));
     }
 }
@@ -43004,7 +43000,7 @@ class MovieView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"dRPCt","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"l3WWw"}],"jJdxq":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap/Button":"9CzHT","react-bootstrap/Container":"2PRIq","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","./movie-view.scss":"kvL93","../../index.scss":"jUTZ8","@parcel/transformer-js/src/esmodule-helpers.js":"dRPCt","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"l3WWw"}],"kvL93":[function() {},{}],"jUTZ8":[function() {},{}],"jJdxq":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$25f1 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -43046,6 +43042,9 @@ function LandingView(props) {
         md: 12,
         lg: 12,
         xl: 12,
+        style: {
+            height: "100vh"
+        },
         __source: {
             fileName: "src/components/landing-view/landing-view.jsx",
             lineNumber: 24
@@ -43154,7 +43153,7 @@ function LandingView(props) {
                                                     width: "16",
                                                     height: "16",
                                                     fill: "currentColor",
-                                                    class: "bi bi-person-circle",
+                                                    className: "bi bi-person-circle",
                                                     viewBox: "0 0 16 16",
                                                     __source: {
                                                         fileName: "src/components/landing-view/landing-view.jsx",
@@ -43171,7 +43170,7 @@ function LandingView(props) {
                                                             __self: this
                                                         }),
                                                         /*#__PURE__*/ _jsxRuntime.jsx("path", {
-                                                            "fill-rule": "evenodd",
+                                                            fillRule: "evenodd",
                                                             d: "M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z",
                                                             __source: {
                                                                 fileName: "src/components/landing-view/landing-view.jsx",
@@ -43250,7 +43249,7 @@ function LandingView(props) {
                         lineNumber: 58
                     },
                     __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
+                    children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
                         xs: 10,
                         style: {
                             color: "white"
@@ -43261,202 +43260,191 @@ function LandingView(props) {
                             lineNumber: 59
                         },
                         __self: this,
-                        children: [
-                            /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
-                                sm: 12,
-                                md: 6,
-                                className: "d-grid gap-3",
-                                __source: {
-                                    fileName: "src/components/landing-view/landing-view.jsx",
-                                    lineNumber: 60
-                                },
-                                __self: this,
-                                children: [
-                                    /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                                        xs: 12,
+                        children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
+                            sm: 12,
+                            md: 6,
+                            className: "d-grid gap-3",
+                            __source: {
+                                fileName: "src/components/landing-view/landing-view.jsx",
+                                lineNumber: 60
+                            },
+                            __self: this,
+                            children: [
+                                /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                                    xs: 12,
+                                    __source: {
+                                        fileName: "src/components/landing-view/landing-view.jsx",
+                                        lineNumber: 61
+                                    },
+                                    __self: this,
+                                    children: /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                                        style: {
+                                            fontWeight: "bold",
+                                            fontSize: "4em",
+                                            margin: "0px"
+                                        },
+                                        className: "font-roboto ",
                                         __source: {
                                             fileName: "src/components/landing-view/landing-view.jsx",
-                                            lineNumber: 61
+                                            lineNumber: 62
                                         },
                                         __self: this,
-                                        children: /*#__PURE__*/ _jsxRuntime.jsx("h1", {
-                                            style: {
-                                                fontWeight: "bold",
-                                                fontSize: "4em",
-                                                margin: "0px"
-                                            },
-                                            className: "font-roboto ",
+                                        children: "Dune"
+                                    })
+                                }),
+                                /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
+                                    className: "font-roboto d-flex align-items-center gap-1",
+                                    __source: {
+                                        fileName: "src/components/landing-view/landing-view.jsx",
+                                        lineNumber: 64
+                                    },
+                                    __self: this,
+                                    children: [
+                                        /*#__PURE__*/ _jsxRuntime.jsx("svg", {
+                                            xmlns: "http://www.w3.org/2000/svg",
+                                            width: "16",
+                                            height: "16",
+                                            fill: "#f5c51c",
+                                            className: "bi bi-star-fill",
+                                            viewBox: "0 0 16 16",
                                             __source: {
                                                 fileName: "src/components/landing-view/landing-view.jsx",
-                                                lineNumber: 62
+                                                lineNumber: 65
                                             },
                                             __self: this,
-                                            children: "Dune"
+                                            children: /*#__PURE__*/ _jsxRuntime.jsx("path", {
+                                                d: "M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z",
+                                                __source: {
+                                                    fileName: "src/components/landing-view/landing-view.jsx",
+                                                    lineNumber: 66
+                                                },
+                                                __self: this
+                                            })
+                                        }),
+                                        "8.0/10 | 604k",
+                                        /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                            style: {
+                                                color: "#a0a0a0",
+                                                paddingLeft: "30px"
+                                            },
+                                            __source: {
+                                                fileName: "src/components/landing-view/landing-view.jsx",
+                                                lineNumber: 69
+                                            },
+                                            __self: this,
+                                            children: "2h 35m | 2021 | PG-13 "
                                         })
-                                    }),
-                                    /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
-                                        className: "font-roboto d-flex align-items-center gap-1",
+                                    ]
+                                }),
+                                /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                                    className: "font-roboto d-flex align-items-center gap-1",
+                                    xs: 12,
+                                    __source: {
+                                        fileName: "src/components/landing-view/landing-view.jsx",
+                                        lineNumber: 72
+                                    },
+                                    __self: this,
+                                    children: "A noble family becomes embroiled in a war for control over the galaxy's most valuable asset while its heir becomes troubled by visions of a dark future."
+                                }),
+                                /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                                    xs: 12,
+                                    className: "",
+                                    __source: {
+                                        fileName: "src/components/landing-view/landing-view.jsx",
+                                        lineNumber: 75
+                                    },
+                                    __self: this,
+                                    children: /*#__PURE__*/ _jsxRuntime.jsxs(_rowDefault.default, {
+                                        className: "gap-2 align-items-center align-content-center gap-lg-0",
                                         __source: {
                                             fileName: "src/components/landing-view/landing-view.jsx",
-                                            lineNumber: 64
+                                            lineNumber: 76
                                         },
                                         __self: this,
                                         children: [
-                                            /*#__PURE__*/ _jsxRuntime.jsx("svg", {
-                                                xmlns: "http://www.w3.org/2000/svg",
-                                                width: "16",
-                                                height: "16",
-                                                fill: "#f5c51c",
-                                                class: "bi bi-star-fill",
-                                                viewBox: "0 0 16 16",
+                                            /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                                                xs: 12,
+                                                lg: 6,
                                                 __source: {
                                                     fileName: "src/components/landing-view/landing-view.jsx",
-                                                    lineNumber: 65
+                                                    lineNumber: 77
                                                 },
                                                 __self: this,
-                                                children: /*#__PURE__*/ _jsxRuntime.jsx("path", {
-                                                    d: "M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z",
-                                                    __source: {
-                                                        fileName: "src/components/landing-view/landing-view.jsx",
-                                                        lineNumber: 66
-                                                    },
-                                                    __self: this
-                                                })
-                                            }),
-                                            "8.0/10 | 604k",
-                                            /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                                                style: {
-                                                    color: "#a0a0a0",
-                                                    paddingLeft: "30px"
-                                                },
-                                                __source: {
-                                                    fileName: "src/components/landing-view/landing-view.jsx",
-                                                    lineNumber: 69
-                                                },
-                                                __self: this,
-                                                children: "2h 35m | 2021 | PG-13 "
-                                            })
-                                        ]
-                                    }),
-                                    /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                                        className: "font-roboto d-flex align-items-center gap-1",
-                                        xs: 12,
-                                        __source: {
-                                            fileName: "src/components/landing-view/landing-view.jsx",
-                                            lineNumber: 72
-                                        },
-                                        __self: this,
-                                        children: "A noble family becomes embroiled in a war for control over the galaxy's most valuable asset while its heir becomes troubled by visions of a dark future."
-                                    }),
-                                    /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                                        xs: 12,
-                                        className: "",
-                                        __source: {
-                                            fileName: "src/components/landing-view/landing-view.jsx",
-                                            lineNumber: 75
-                                        },
-                                        __self: this,
-                                        children: /*#__PURE__*/ _jsxRuntime.jsxs(_rowDefault.default, {
-                                            className: "gap-2 align-items-center align-content-center gap-lg-0",
-                                            __source: {
-                                                fileName: "src/components/landing-view/landing-view.jsx",
-                                                lineNumber: 76
-                                            },
-                                            __self: this,
-                                            children: [
-                                                /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                                                children: /*#__PURE__*/ _jsxRuntime.jsxs(_buttonDefault.default, {
                                                     xs: 12,
-                                                    lg: 6,
+                                                    variant: "primary",
+                                                    type: "submit",
+                                                    style: {
+                                                        width: "100%"
+                                                    },
+                                                    className: "font-roboto d-flex align-items-center gap-1 justify-content-center",
                                                     __source: {
                                                         fileName: "src/components/landing-view/landing-view.jsx",
-                                                        lineNumber: 77
+                                                        lineNumber: 78
                                                     },
                                                     __self: this,
-                                                    children: /*#__PURE__*/ _jsxRuntime.jsxs(_buttonDefault.default, {
-                                                        xs: 12,
-                                                        variant: "primary",
-                                                        type: "submit",
-                                                        style: {
-                                                            width: "100%"
-                                                        },
-                                                        className: "font-roboto d-flex align-items-center gap-1 justify-content-center",
-                                                        __source: {
-                                                            fileName: "src/components/landing-view/landing-view.jsx",
-                                                            lineNumber: 78
-                                                        },
-                                                        __self: this,
-                                                        children: [
-                                                            /*#__PURE__*/ _jsxRuntime.jsx("svg", {
-                                                                xmlns: "http://www.w3.org/2000/svg",
-                                                                width: "16",
-                                                                height: "16",
-                                                                fill: "currentColor",
-                                                                class: "bi bi-play-fill",
-                                                                viewBox: "0 0 16 16",
+                                                    children: [
+                                                        /*#__PURE__*/ _jsxRuntime.jsx("svg", {
+                                                            xmlns: "http://www.w3.org/2000/svg",
+                                                            width: "16",
+                                                            height: "16",
+                                                            fill: "currentColor",
+                                                            className: "bi bi-play-fill",
+                                                            viewBox: "0 0 16 16",
+                                                            __source: {
+                                                                fileName: "src/components/landing-view/landing-view.jsx",
+                                                                lineNumber: 79
+                                                            },
+                                                            __self: this,
+                                                            children: /*#__PURE__*/ _jsxRuntime.jsx("path", {
+                                                                d: "m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z",
                                                                 __source: {
                                                                     fileName: "src/components/landing-view/landing-view.jsx",
-                                                                    lineNumber: 79
+                                                                    lineNumber: 80
                                                                 },
-                                                                __self: this,
-                                                                children: /*#__PURE__*/ _jsxRuntime.jsx("path", {
-                                                                    d: "m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z",
-                                                                    __source: {
-                                                                        fileName: "src/components/landing-view/landing-view.jsx",
-                                                                        lineNumber: 80
-                                                                    },
-                                                                    __self: this
-                                                                })
-                                                            }),
-                                                            "PLAY NOW"
-                                                        ]
-                                                    })
-                                                }),
-                                                /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                                                                __self: this
+                                                            })
+                                                        }),
+                                                        "PLAY NOW"
+                                                    ]
+                                                })
+                                            }),
+                                            /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                                                xs: 12,
+                                                lg: 6,
+                                                __source: {
+                                                    fileName: "src/components/landing-view/landing-view.jsx",
+                                                    lineNumber: 85
+                                                },
+                                                __self: this,
+                                                children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
                                                     xs: 12,
-                                                    lg: 6,
+                                                    variant: "secondary",
+                                                    type: "submit",
+                                                    style: {
+                                                        width: "100%",
+                                                        backgroundColor: "#6c757d7d"
+                                                    },
                                                     __source: {
                                                         fileName: "src/components/landing-view/landing-view.jsx",
-                                                        lineNumber: 85
+                                                        lineNumber: 86
                                                     },
                                                     __self: this,
-                                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
-                                                        xs: 12,
-                                                        variant: "secondary",
-                                                        type: "submit",
-                                                        style: {
-                                                            width: "100%",
-                                                            backgroundColor: "#6c757d7d"
-                                                        },
-                                                        __source: {
-                                                            fileName: "src/components/landing-view/landing-view.jsx",
-                                                            lineNumber: 86
-                                                        },
-                                                        __self: this,
-                                                        children: "TRAILER"
-                                                    })
+                                                    children: "TRAILER"
                                                 })
-                                            ]
-                                        })
+                                            })
+                                        ]
                                     })
-                                ]
-                            }),
-                            /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                                sm: 12,
-                                md: 6,
-                                __source: {
-                                    fileName: "src/components/landing-view/landing-view.jsx",
-                                    lineNumber: 97
-                                },
-                                __self: this
-                            })
-                        ]
+                                })
+                            ]
+                        })
                     })
                 })
             }),
             /*#__PURE__*/ _jsxRuntime.jsx("style", {
                 __source: {
                     fileName: "src/components/landing-view/landing-view.jsx",
-                    lineNumber: 105
+                    lineNumber: 100
                 },
                 __self: this,
                 children: "@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');"

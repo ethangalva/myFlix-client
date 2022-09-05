@@ -1,0 +1,19 @@
+.movie-view {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: rgb(160, 160, 160);
+}
+.movie-image {
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.movie-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    -webkit-box-shadow: inset 0px -50px 18px -30px #141414; 
+    box-shadow: inset 0px -50px 18px -30px #141414;
+}

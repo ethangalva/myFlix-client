@@ -80,6 +80,15 @@ body, html {
 .center-hor {
   margin: auto;
 }
+
+.padding-0 {
+  padding: 0px !important;
+}
+
+.white-font {
+  color: white;
+  font-weight: bold;
+}
 body, html {
   height: 100%;
 }
@@ -153,6 +162,28 @@ body, html {
     justify-content: left !important;
   }
 }
+
+.movie-view {
+  font-family: "Roboto Condensed", sans-serif;
+  color: rgb(160, 160, 160);
+}
+
+.movie-image {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.movie-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  -webkit-box-shadow: inset 0px -50px 18px -30px #141414;
+  box-shadow: inset 0px -50px 18px -30px #141414;
+}
 .big-movie-display {
   background-image: url(poster.4bf5f7a1.png);
   background-position: center;
@@ -167,7 +198,6 @@ body, html {
 
 .logo {
   background: rgb(229, 9, 20);
-  background: linear-gradient(90deg, rgb(229, 9, 20) 0%, rgb(107, 13, 17) 47%, rgb(0, 0, 0) 100%);
 }
 .carousel-indicators {
   position: absolute;
@@ -186,7 +216,21 @@ body, html {
 }
 .movieThumbnailRow {
   background-color: #141414;
-  padding-right: 1em;
-  padding-left: 1em;
+}
+
+.movieCard-Parent {
+  transition: all 0.25s ease-in-out;
+}
+
+.movieCard-Parent:hover {
+  transform: scale(1.1);
+}
+
+.movieCard-Parent:hover > .movieCard > p {
+  color: white !important;
+}
+
+.movieCard-Parent:hover > .movieCard > .extraInformation {
+  display: block !important;
 }
 /*# sourceMappingURL=index.1f14ec93.css.map */

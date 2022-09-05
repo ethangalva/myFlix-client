@@ -1,4 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
+import './movie-view.scss';
+import '../../index.scss';
+
 
 export class MovieView extends React.Component {
     
@@ -6,21 +14,27 @@ export class MovieView extends React.Component {
         const {movie, onBackClick} = this.props;
 
         return (
-            <div className="movie-view">
-                <div className="movie-poster">
-                    <img src={movie.ImagePath} />
-                </div>
-                <div className="movie-title">
-                    <span className="label">Title: </span>
-                    <span className="value">{movie.Title}</span>
-                </div>
-                <div className="movie-description">
-                    <span className="label">Description: </span>
-                    <span className="value">{movie.Description}</span>
-                </div>
-
-                <button onClick={() => { onBackClick(null); }} >BACK</button>
-            </div>
+            <Row className="h-100 justify-content-center container-row movie-view">
+                <Col xs={12} className="d-flex padding-0 flex-direction-column">
+                    {/* Top image of movie */}
+                    <Col xs={12} className="movie-image">
+                        <img crossOrigin="src={movie.ImagePath}" src={movie.ImagePath} className="img w-100"/>
+                    </Col>
+                    {/* Movie Information*/}
+                    <Col xs={12}>
+                        {/* Ratings / Favorites Button */}
+                        <Col xs={12} style={{padding: "3vh 1em"}}>
+                            <Col xs={6}>
+                                q  wd
+                            </Col>
+                            
+                        </Col>
+                    </Col>
+                </Col>
+            </Row>
         );
     }
 }
+
+
+

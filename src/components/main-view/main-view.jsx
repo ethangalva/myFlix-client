@@ -72,18 +72,25 @@ export class MainView extends React.Component {
       
         return (
           <Container fluid>
-            <Row className="vh-100 justify-content-center container-row ">
-              <LandingView />
+            {/* if [selectedMovie: true] then  */}
+            <Row className="justify-content-center container-row">
+              {selectedMovie
+                ? (
+                  <></>
+                )
+                : <LandingView />
+              }
             </Row>
+            
             <Row className="justify-content-center container-row movieThumbnailRow">
               {selectedMovie
                 ? ( 
-                  <Col md={8}>
+                  <Col xs={12} style={{height: "100vh"}}>
                     <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
                   </Col>
                 )
                 : movies.map(movie => (
-                    <Col xs={6} sm={4} lg={3} xl={2} style={{paddingRight: "3px", paddingLeft: "3px"}}>
+                    <Col xs={6} sm={4} lg={3} xl={2} style={{paddingRight: ".25em", paddingLeft: ".25em"}} className="movieCard-Parent">
                       <MovieCard key={movie._id} movie={movie} onMovieClick={(movie) => { this.setSelectedMovie(movie) }}/>
                     </Col>
                   ))

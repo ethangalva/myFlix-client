@@ -1,5 +1,15 @@
 .movieThumbnailRow {
     background-color: #141414;
-    padding-right: 1em;
-    padding-left: 1em;
+}
+.movieCard-Parent {
+    transition: all .25s ease-in-out;
+}
+.movieCard-Parent:hover {
+    transform: scale(1.1);
+}
+.movieCard-Parent:hover > .movieCard > p {
+    color: white !important;
+}
+.movieCard-Parent:hover > .movieCard > .extraInformation {
+    display: block !important;
 }
