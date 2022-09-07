@@ -28,7 +28,7 @@ export function LandingView(props) {
                         {/* set href when available */}
                         <Navbar.Brand href="#" className="d-flex gap-2 align-items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#b50911" className="bi bi-tv" viewBox="0 0 16 16">
-                            <path d="M12.643 15C13.979 15 15 13.845 15 12.5V5H1v7.5C1 13.845 2.021 15 3.357 15h9.286zM5.5 7h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zM.8 1a.8.8 0 0 0-.8.8V3a.8.8 0 0 0 .8.8h14.4A.8.8 0 0 0 16 3V1.8a.8.8 0 0 0-.8-.8H.8z"/>
+                                <path d="M12.643 15C13.979 15 15 13.845 15 12.5V5H1v7.5C1 13.845 2.021 15 3.357 15h9.286zM5.5 7h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zM.8 1a.8.8 0 0 0-.8.8V3a.8.8 0 0 0 .8.8h14.4A.8.8 0 0 0 16 3V1.8a.8.8 0 0 0-.8-.8H.8z"/>
                             </svg>
                             myFlix
                         </Navbar.Brand>
@@ -56,7 +56,7 @@ export function LandingView(props) {
             {/* Row for big movie display on landing */}
             <Row className="h-100 justify-content-center container-row big-movie-display">
                 <Col xs={12} md={12} lg={12} xl={12} className="d-flex align-items-center" style={{flexDirection: "column", justifyContent: "flex-end", paddingBottom: "5vh"}}>
-                        <Col xs={10} style={{ color: "white"}} className="d-flex" >
+                        <Col xs={11} style={{ color: "white"}} className="d-flex" >
                             <Col sm={12} md={6} className="d-grid gap-3">
                                 <Col xs={12}>
                                     <h1 style={{fontWeight: "bold", fontSize: "4em", margin: "0px"}} className="font-roboto ">Dune</h1>

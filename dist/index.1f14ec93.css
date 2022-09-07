@@ -166,6 +166,7 @@ body, html {
 .movie-view {
   font-family: "Roboto Condensed", sans-serif;
   color: rgb(160, 160, 160);
+  font-size: 0.9rem;
 }
 
 .movie-image {
@@ -183,6 +184,15 @@ body, html {
   width: 100%;
   -webkit-box-shadow: inset 0px -50px 18px -30px #141414;
   box-shadow: inset 0px -50px 18px -30px #141414;
+}
+
+.go-back {
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  margin-top: 10px;
+  margin-left: 10px;
 }
 .big-movie-display {
   background-image: url(poster.4bf5f7a1.png);

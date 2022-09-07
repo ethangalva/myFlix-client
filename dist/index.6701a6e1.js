@@ -38221,10 +38221,26 @@ class MainView extends _reactDefault.default.Component {
     render() {
         const { movies , selectedMovie , user , UsernameRegistered  } = this.state;
         // remove comments after done with main view
-        // //forced to register after refresh for testing purposes
-        // if (!UsernameRegistered) return <RegisterView onRegister={UsernameRegistered => this.onRegister(UsernameRegistered)} />
-        // // if no user then the LoginView is rendered. if there is an user logged in, the user details are passed as a prop to the LoginView
-        // if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} /> 
+        //forced to register after refresh for testing purposes
+        if (!UsernameRegistered) return(/*#__PURE__*/ _jsxRuntime.jsx(_registerView.RegisterView, {
+            onRegister: (UsernameRegistered1)=>this.onRegister(UsernameRegistered1)
+            ,
+            __source: {
+                fileName: "src/components/main-view/main-view.jsx",
+                lineNumber: 66
+            },
+            __self: this
+        }));
+        // if no user then the LoginView is rendered. if there is an user logged in, the user details are passed as a prop to the LoginView
+        if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
+            onLoggedIn: (user1)=>this.onLoggedIn(user1)
+            ,
+            __source: {
+                fileName: "src/components/main-view/main-view.jsx",
+                lineNumber: 69
+            },
+            __self: this
+        }));
         if (movies.length === 0) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
             className: "main-view",
             __source: {
@@ -38266,9 +38282,6 @@ class MainView extends _reactDefault.default.Component {
                     __self: this,
                     children: selectedMovie ? /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
                         xs: 12,
-                        style: {
-                            height: "100vh"
-                        },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
                             lineNumber: 88
@@ -42889,6 +42902,13 @@ MovieCard.propTypes = {
         Rating: _propTypesDefault.default.shape({
             Reviews: _propTypesDefault.default.string.isRequired,
             Score: _propTypesDefault.default.string.isRequired
+        }),
+        MovieLenght: _propTypesDefault.default.string.isRequired,
+        ReleaseYear: _propTypesDefault.default.string.isRequired,
+        Director: _propTypesDefault.default.shape({
+            Name: _propTypesDefault.default.string.isRequired,
+            Bio: _propTypesDefault.default.string.isRequired,
+            Headshot: _propTypesDefault.default.string.isRequired
         })
     }).isRequired,
     onMovieClick: _propTypesDefault.default.func.isRequired
@@ -42921,33 +42941,81 @@ var _row = require("react-bootstrap/Row");
 var _rowDefault = parcelHelpers.interopDefault(_row);
 var _col = require("react-bootstrap/Col");
 var _colDefault = parcelHelpers.interopDefault(_col);
+var _closeButton = require("react-bootstrap/CloseButton");
+var _closeButtonDefault = parcelHelpers.interopDefault(_closeButton);
+var _image = require("react-bootstrap/Image");
+var _imageDefault = parcelHelpers.interopDefault(_image);
 var _movieViewScss = require("./movie-view.scss");
 var _indexScss = require("../../index.scss");
 class MovieView extends _reactDefault.default.Component {
     render() {
         const { movie , onBackClick  } = this.props;
         return(/*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
-            className: "h-100 justify-content-center container-row movie-view",
+            className: "justify-content-center container-row movie-view",
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 17
+                lineNumber: 20
             },
             __self: this,
             children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
                 xs: 12,
-                className: "d-flex padding-0 flex-direction-column",
+                className: "d-flex padding-0",
+                style: {
+                    flexDirection: "column"
+                },
                 __source: {
                     fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 18
+                    lineNumber: 21
                 },
                 __self: this,
                 children: [
                     /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
                         xs: 12,
+                        __source: {
+                            fileName: "src/components/movie-view/movie-view.jsx",
+                            lineNumber: 23
+                        },
+                        __self: this,
+                        children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
+                            className: "go-back",
+                            variant: "white",
+                            onClick: ()=>{
+                                onBackClick(null);
+                            },
+                            __source: {
+                                fileName: "src/components/movie-view/movie-view.jsx",
+                                lineNumber: 24
+                            },
+                            __self: this,
+                            children: /*#__PURE__*/ _jsxRuntime.jsx("svg", {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                width: "20",
+                                height: "20",
+                                fill: "white",
+                                className: "bi bi-backspace-fill",
+                                viewBox: "0 0 16 16",
+                                __source: {
+                                    fileName: "src/components/movie-view/movie-view.jsx",
+                                    lineNumber: 25
+                                },
+                                __self: this,
+                                children: /*#__PURE__*/ _jsxRuntime.jsx("path", {
+                                    d: "M15.683 3a2 2 0 0 0-2-2h-7.08a2 2 0 0 0-1.519.698L.241 7.35a1 1 0 0 0 0 1.302l4.843 5.65A2 2 0 0 0 6.603 15h7.08a2 2 0 0 0 2-2V3zM5.829 5.854a.5.5 0 1 1 .707-.708l2.147 2.147 2.146-2.147a.5.5 0 1 1 .707.708L9.39 8l2.146 2.146a.5.5 0 0 1-.707.708L8.683 8.707l-2.147 2.147a.5.5 0 0 1-.707-.708L7.976 8 5.829 5.854z",
+                                    __source: {
+                                        fileName: "src/components/movie-view/movie-view.jsx",
+                                        lineNumber: 26
+                                    },
+                                    __self: this
+                                })
+                            })
+                        })
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                        xs: 12,
                         className: "movie-image",
                         __source: {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 20
+                            lineNumber: 32
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
@@ -42956,38 +43024,364 @@ class MovieView extends _reactDefault.default.Component {
                             className: "img w-100",
                             __source: {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 21
+                                lineNumber: 33
                             },
                             __self: this
                         })
                     }),
-                    /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                    /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
                         xs: 12,
+                        style: {
+                            padding: "1em"
+                        },
                         __source: {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 24
+                            lineNumber: 36
                         },
                         __self: this,
-                        children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                            xs: 12,
-                            style: {
-                                padding: "3vh 1em"
-                            },
-                            __source: {
-                                fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 26
-                            },
-                            __self: this,
-                            children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                                xs: 6,
+                        children: [
+                            /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
+                                xs: 12,
+                                className: "d-flex",
                                 __source: {
                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 27
+                                    lineNumber: 38
                                 },
                                 __self: this,
-                                children: "q wd"
+                                children: [
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                                        xs: 6,
+                                        __source: {
+                                            fileName: "src/components/movie-view/movie-view.jsx",
+                                            lineNumber: 39
+                                        },
+                                        __self: this,
+                                        children: /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                                            className: "d-flex  gap-2 align-items-baseline",
+                                            __source: {
+                                                fileName: "src/components/movie-view/movie-view.jsx",
+                                                lineNumber: 41
+                                            },
+                                            __self: this,
+                                            children: [
+                                                /*#__PURE__*/ _jsxRuntime.jsx("svg", {
+                                                    xmlns: "http://www.w3.org/2000/svg",
+                                                    width: "16",
+                                                    height: "16",
+                                                    fill: "#f6c51c",
+                                                    className: "bi bi-star-fill",
+                                                    viewBox: "0 0 16 16",
+                                                    __source: {
+                                                        fileName: "src/components/movie-view/movie-view.jsx",
+                                                        lineNumber: 42
+                                                    },
+                                                    __self: this,
+                                                    children: /*#__PURE__*/ _jsxRuntime.jsx("path", {
+                                                        d: "M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z",
+                                                        __source: {
+                                                            fileName: "src/components/movie-view/movie-view.jsx",
+                                                            lineNumber: 42
+                                                        },
+                                                        __self: this
+                                                    })
+                                                }),
+                                                /*#__PURE__*/ _jsxRuntime.jsxs("p", {
+                                                    style: {
+                                                        margin: "0px"
+                                                    },
+                                                    __source: {
+                                                        fileName: "src/components/movie-view/movie-view.jsx",
+                                                        lineNumber: 43
+                                                    },
+                                                    __self: this,
+                                                    children: [
+                                                        /*#__PURE__*/ _jsxRuntime.jsxs("span", {
+                                                            className: "white-font",
+                                                            __source: {
+                                                                fileName: "src/components/movie-view/movie-view.jsx",
+                                                                lineNumber: 44
+                                                            },
+                                                            __self: this,
+                                                            children: [
+                                                                movie.Rating.Score,
+                                                                " / 10"
+                                                            ]
+                                                        }),
+                                                        /*#__PURE__*/ _jsxRuntime.jsxs("span", {
+                                                            style: {
+                                                                fontSize: ".9rem"
+                                                            },
+                                                            __source: {
+                                                                fileName: "src/components/movie-view/movie-view.jsx",
+                                                                lineNumber: 45
+                                                            },
+                                                            __self: this,
+                                                            children: [
+                                                                " | ",
+                                                                movie.Rating.Reviews / 1000000,
+                                                                "M "
+                                                            ]
+                                                        })
+                                                    ]
+                                                })
+                                            ]
+                                        })
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                                        xs: 6,
+                                        className: "d-flex align-items-center",
+                                        style: {
+                                            justifyContent: "flex-end"
+                                        },
+                                        __source: {
+                                            fileName: "src/components/movie-view/movie-view.jsx",
+                                            lineNumber: 49
+                                        },
+                                        __self: this,
+                                        children: /*#__PURE__*/ _jsxRuntime.jsx("svg", {
+                                            xmlns: "http://www.w3.org/2000/svg",
+                                            width: "16",
+                                            height: "16",
+                                            fill: "white",
+                                            className: "bi bi-heart",
+                                            viewBox: "0 0 16 16",
+                                            __source: {
+                                                fileName: "src/components/movie-view/movie-view.jsx",
+                                                lineNumber: 50
+                                            },
+                                            __self: this,
+                                            children: /*#__PURE__*/ _jsxRuntime.jsx("path", {
+                                                d: "m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z",
+                                                __source: {
+                                                    fileName: "src/components/movie-view/movie-view.jsx",
+                                                    lineNumber: 50
+                                                },
+                                                __self: this
+                                            })
+                                        })
+                                    })
+                                ]
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                                xs: 12,
+                                className: "d-flex",
+                                style: {
+                                    paddingTop: "1em"
+                                },
+                                __source: {
+                                    fileName: "src/components/movie-view/movie-view.jsx",
+                                    lineNumber: 54
+                                },
+                                __self: this,
+                                children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
+                                    xs: 12,
+                                    __source: {
+                                        fileName: "src/components/movie-view/movie-view.jsx",
+                                        lineNumber: 55
+                                    },
+                                    __self: this,
+                                    children: [
+                                        /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                                            className: "white-font",
+                                            style: {
+                                                margin: "0px"
+                                            },
+                                            __source: {
+                                                fileName: "src/components/movie-view/movie-view.jsx",
+                                                lineNumber: 56
+                                            },
+                                            __self: this,
+                                            children: movie.Title
+                                        }),
+                                        /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                                            style: {
+                                                marginBottom: ".5rem"
+                                            },
+                                            __source: {
+                                                fileName: "src/components/movie-view/movie-view.jsx",
+                                                lineNumber: 57
+                                            },
+                                            __self: this,
+                                            children: [
+                                                movie.MovieLenght,
+                                                " • ",
+                                                movie.Genre.Name,
+                                                " • ",
+                                                movie.ReleaseYear
+                                            ]
+                                        }),
+                                        /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                                            __source: {
+                                                fileName: "src/components/movie-view/movie-view.jsx",
+                                                lineNumber: 58
+                                            },
+                                            __self: this,
+                                            children: movie.Description
+                                        })
+                                    ]
+                                })
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
+                                xs: 12,
+                                className: "d-flex",
+                                style: {
+                                    paddingTop: "1em",
+                                    alignItems: "center"
+                                },
+                                __source: {
+                                    fileName: "src/components/movie-view/movie-view.jsx",
+                                    lineNumber: 62
+                                },
+                                __self: this,
+                                children: [
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                                        xs: 4,
+                                        className: "d-flex justify-content-center",
+                                        __source: {
+                                            fileName: "src/components/movie-view/movie-view.jsx",
+                                            lineNumber: 63
+                                        },
+                                        __self: this,
+                                        children: /*#__PURE__*/ _jsxRuntime.jsx(_imageDefault.default, {
+                                            style: {
+                                                filter: "grayscale(100%)",
+                                                maxWidth: "80%"
+                                            },
+                                            rounded: "true",
+                                            crossOrigin: movie.Director.Headshot,
+                                            src: movie.Director.Headshot,
+                                            __source: {
+                                                fileName: "src/components/movie-view/movie-view.jsx",
+                                                lineNumber: 64
+                                            },
+                                            __self: this
+                                        })
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
+                                        xs: 8,
+                                        __source: {
+                                            fileName: "src/components/movie-view/movie-view.jsx",
+                                            lineNumber: 66
+                                        },
+                                        __self: this,
+                                        children: [
+                                            /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                                                className: "white-font",
+                                                style: {
+                                                    margin: "0px",
+                                                    fontSize: "1.1em"
+                                                },
+                                                __source: {
+                                                    fileName: "src/components/movie-view/movie-view.jsx",
+                                                    lineNumber: 67
+                                                },
+                                                __self: this,
+                                                children: movie.Director.Name
+                                            }),
+                                            /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                                                style: {
+                                                    margin: "0px"
+                                                },
+                                                __source: {
+                                                    fileName: "src/components/movie-view/movie-view.jsx",
+                                                    lineNumber: 68
+                                                },
+                                                __self: this,
+                                                children: "Phillips was known as a master of the “bro comedy” epitomized by his “Hangover” trilogy, chock-full of partying, slapstick humor, wild misadventures and sexual conquests."
+                                            })
+                                        ]
+                                    })
+                                ]
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
+                                xs: 12,
+                                className: "d-grid gap-2 buttons-bottom",
+                                style: {
+                                    paddingTop: "2em"
+                                },
+                                __source: {
+                                    fileName: "src/components/movie-view/movie-view.jsx",
+                                    lineNumber: 72
+                                },
+                                __self: this,
+                                children: [
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                                        xs: 12,
+                                        lg: 6,
+                                        __source: {
+                                            fileName: "src/components/movie-view/movie-view.jsx",
+                                            lineNumber: 73
+                                        },
+                                        __self: this,
+                                        children: /*#__PURE__*/ _jsxRuntime.jsxs(_buttonDefault.default, {
+                                            xs: 12,
+                                            variant: "success",
+                                            type: "submit",
+                                            style: {
+                                                width: "100%"
+                                            },
+                                            className: "font-roboto d-flex align-items-center gap-1 justify-content-center",
+                                            __source: {
+                                                fileName: "src/components/movie-view/movie-view.jsx",
+                                                lineNumber: 74
+                                            },
+                                            __self: this,
+                                            children: [
+                                                /*#__PURE__*/ _jsxRuntime.jsx("svg", {
+                                                    xmlns: "http://www.w3.org/2000/svg",
+                                                    width: "16",
+                                                    height: "16",
+                                                    fill: "currentColor",
+                                                    className: "bi bi-play-fill",
+                                                    viewBox: "0 0 16 16",
+                                                    __source: {
+                                                        fileName: "src/components/movie-view/movie-view.jsx",
+                                                        lineNumber: 75
+                                                    },
+                                                    __self: this,
+                                                    children: /*#__PURE__*/ _jsxRuntime.jsx("path", {
+                                                        d: "m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z",
+                                                        __source: {
+                                                            fileName: "src/components/movie-view/movie-view.jsx",
+                                                            lineNumber: 76
+                                                        },
+                                                        __self: this
+                                                    })
+                                                }),
+                                                "PLAY NOW"
+                                            ]
+                                        })
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                                        xs: 12,
+                                        lg: 6,
+                                        __source: {
+                                            fileName: "src/components/movie-view/movie-view.jsx",
+                                            lineNumber: 81
+                                        },
+                                        __self: this,
+                                        children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
+                                            xs: 12,
+                                            onClick: ()=>{
+                                                onBackClick(null);
+                                            },
+                                            variant: "secondary",
+                                            type: "submit",
+                                            style: {
+                                                width: "100%",
+                                                backgroundColor: "#6c757d7d"
+                                            },
+                                            __source: {
+                                                fileName: "src/components/movie-view/movie-view.jsx",
+                                                lineNumber: 82
+                                            },
+                                            __self: this,
+                                            children: "GO BACK"
+                                        })
+                                    })
+                                ]
                             })
-                        })
+                        ]
                     })
                 ]
             })
@@ -43000,7 +43394,7 @@ class MovieView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap/Button":"9CzHT","react-bootstrap/Container":"2PRIq","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","./movie-view.scss":"kvL93","../../index.scss":"jUTZ8","@parcel/transformer-js/src/esmodule-helpers.js":"dRPCt","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"l3WWw"}],"kvL93":[function() {},{}],"jUTZ8":[function() {},{}],"jJdxq":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap/Button":"9CzHT","react-bootstrap/Container":"2PRIq","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-bootstrap/CloseButton":"9rnf2","react-bootstrap/Image":"kKVYG","./movie-view.scss":"kvL93","../../index.scss":"jUTZ8","@parcel/transformer-js/src/esmodule-helpers.js":"dRPCt","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"l3WWw"}],"kvL93":[function() {},{}],"jUTZ8":[function() {},{}],"jJdxq":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$25f1 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -43250,7 +43644,7 @@ function LandingView(props) {
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                        xs: 10,
+                        xs: 11,
                         style: {
                             color: "white"
                         },

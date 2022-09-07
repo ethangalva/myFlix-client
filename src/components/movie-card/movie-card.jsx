@@ -27,6 +27,13 @@ MovieCard.propTypes = {
         Rating: PropTypes.shape({
             Reviews: PropTypes.string.isRequired,
             Score: PropTypes.string.isRequired
+        }),
+        MovieLenght: PropTypes.string.isRequired,
+        ReleaseYear: PropTypes.string.isRequired,
+        Director: PropTypes.shape({
+            Name: PropTypes.string.isRequired,
+            Bio: PropTypes.string.isRequired,
+            Headshot: PropTypes.string.isRequired
         })
     }).isRequired,
     onMovieClick: PropTypes.func.isRequired
