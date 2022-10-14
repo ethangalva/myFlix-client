@@ -33,7 +33,7 @@ export function LandingView(props) {
                             myFlix
                         </Navbar.Brand>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                        <Navbar.Collapse id="responsive-navbar-nav">
+                        <Navbar.Collapse id="responsive-navbar-nav" style={{backdropFilter: "blur(5px)"}}>
                             <Nav className="ms-auto">
                                 <Nav.Link href="#features" className='center-hor d-flex gap-2 align-items-center' style={{color: "white"}}>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-person-circle" viewBox="0 0 16 16">

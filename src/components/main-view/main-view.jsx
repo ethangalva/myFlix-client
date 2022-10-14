@@ -62,11 +62,11 @@ export class MainView extends React.Component {
         const { movies, selectedMovie, user, UsernameRegistered } = this.state;
 
       // remove comments after done with main view
-        //forced to register after refresh for testing purposes
-        if (!UsernameRegistered) return <RegisterView onRegister={UsernameRegistered => this.onRegister(UsernameRegistered)} />
+        // //forced to register after refresh for testing purposes
+        // if (!UsernameRegistered) return <RegisterView onRegister={UsernameRegistered => this.onRegister(UsernameRegistered)} />
 
-        // if no user then the LoginView is rendered. if there is an user logged in, the user details are passed as a prop to the LoginView
-        if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} /> 
+        // // if no user then the LoginView is rendered. if there is an user logged in, the user details are passed as a prop to the LoginView
+        // if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} /> 
 
         if (movies.length === 0) return <div className="main-view" />;
       
