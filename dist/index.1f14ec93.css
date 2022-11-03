@@ -90,12 +90,21 @@ body, html {
   font-weight: bold;
 }
 
-html {
+html, body {
   background-color: #141414;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
-body {
-  background-color: #141414;
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 body, html {
   height: 100%;
@@ -203,6 +212,33 @@ body, html {
   margin-left: 10px;
   background-color: rgba(20, 20, 20, 0.5058823529) !important;
 }
+
+.director {
+  background-color: rgba(35, 35, 35, 0.5058823529);
+  padding-bottom: 16px;
+  border-radius: 16px;
+}
+
+a {
+  color: rgb(160, 160, 160) !important;
+  text-decoration: none !important;
+}
+
+.genre {
+  background-color: rgba(71, 71, 71, 0.5058823529);
+  border-radius: 6px;
+  padding: 2px 4px;
+}
+
+.grow {
+  transition: all 0.3s ease-in-out;
+}
+
+.grow:hover {
+  transform: scale(1.05);
+  background-color: #198754;
+  color: white;
+}
 .big-movie-display {
   background-image: url(poster.4bf5f7a1.png);
   background-position: center;
@@ -218,20 +254,15 @@ body, html {
 .logo {
   background: rgb(229, 9, 20);
 }
-.carousel-indicators {
-  position: absolute;
-  right: 0;
-  top: 0 !important;
-  left: 0;
-  z-index: 2;
-  display: flex;
-  justify-content: right !important;
-  padding: 0;
-  margin-right: 15%;
-  margin-bottom: 0rem !important;
-  margin-top: -2rem;
-  margin-left: 15%;
-  list-style: none;
+.director-view {
+  color: rgb(160, 160, 160);
+}
+
+.bio {
+  background-color: #1c1c1c;
+  border-radius: 14px;
+  color: white;
+  padding: 8px;
 }
 .movieThumbnailRow {
   background-color: #141414;

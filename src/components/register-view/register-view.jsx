@@ -2,7 +2,10 @@ import React, {useState} from "react";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import FloatingLabel from "react-bootstrap/FloatingLabel";
+import axios from "axios";
 // remove after touchups'
+
+import { Link } from "react-router-dom";
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -17,12 +20,26 @@ export function RegisterView(props) {
     const [ RegisterEmail, setRegisteredEmail] = useState('')
 
 
-    const handleSubmit = (e) => {
+    const handleRegister = (e) => {
         e.preventDefault();
-        console.log(RegisterUsername);
+        console.log(RegisterUsername, RegisterPassword, RegisterEmail);
+
 
         // post request to create user in db via api call
-        props.onRegister(RegisterUsername);
+        // props.onRegister(RegisterUsername);
+        axios.post('https://my-flix-apps.herokuapp.com/users', {
+            Username: RegisterUsername,
+            Password: RegisterPassword,
+            Email: RegisterEmail
+        })
+        .then(response => {
+            const data = response.data;
+            console.log(data);
+            window.open('/', '_self');
+        })
+        .catch(e => {
+            console.log('Error registering user')
+        });
     };
 
     return (
@@ -100,14 +117,18 @@ export function RegisterView(props) {
                                         </Col>
 
                                         <Col xs={10} sm={8} lg={8} className="d-grid">
-                                            <Button variant='success' type='submit' onClick={handleSubmit}>
+                                            <Button variant='success' type='submit' onClick={handleRegister}>
                                                 Sign Up
                                             </Button>
                                             <hr />
                                             <p xs={10} sm={8} lg={8} style={{marginBottom: "8px", textAlign: "center"}}>Already have an account?</p>
-                                            <Button xs={10} sm={8} lg={8} variant='dark' >
-                                                Log In
-                                            </Button>
+                                            <Link to={`/`}>
+
+                                                <Button xs={10} sm={8} lg={8} variant='dark' style={{width: "100%"}}>
+                                                    Log In
+                                                </Button>
+
+                                            </Link>
                                         </Col>
                                         <Col xs={10} sm={8} lg={8} style={{padding: "5vh"}}>
                                             <Row>
@@ -115,7 +136,7 @@ export function RegisterView(props) {
                                                     Project links:
                                                 </Col>
                                                 <Col xs={6} className="align-items-center align-content-center">
-                                                    <a href="#" rel="link to github of proyect" target="_blank" style={{color: "#212529", paddingRight: '10px'}}>
+                                                    <a href="https://github.com/ethangalva/myFlix-client" rel="link to github of proyect" target="_blank" style={{color: "#212529", paddingRight: '10px'}}>
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" className="bi bi-github" viewBox="0 0 16 16">
                                                             <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
                                                         </svg>

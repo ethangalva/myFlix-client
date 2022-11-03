@@ -2,7 +2,10 @@ import React, {useState} from "react";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import FloatingLabel from "react-bootstrap/FloatingLabel";
+import axios from 'axios';
 // remove after touchups
+
+import { Link } from "react-router-dom";
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -15,34 +18,55 @@ export function LoginView(props) {
     // assigns default values to username/password
     const [ username, setUsername ] = useState('');
     const [ password, setPassword ] = useState('');
+    // declare hook for each input
+    const [ usernameErr, setUsernameErr ] = useState('');
+    const [ passwordErr, setPasswordErr ] = useState('');
+
+    // validate user inputs 
+    const validate = () => {
+        let isReq = true;
+        if(!username){
+            setUsernameErr('Username Required');
+            isReq = false;
+        }else if(username.length < 2) {
+            setUsernameErr('Username must be 2 characters long');
+            isReq = false;
+        } 
+        if(!password){
+            setPasswordErr('Password Required');
+            isReq = false;
+        }else if(password.length < 6) {
+            setPassword('Password must be 6 characters long');
+            isReq = false;
+        }
+        
+        return isReq;
+    }
 
     const handleSubmit = (e) => {
         // stops default behavior of button [refreshing page when clicking submit]
         e.preventDefault();
-        console.log(username, password);
-        // Send request to server for auth
-        props.onLoggedIn(username);
+        const isReq = validate();
+        if(isReq) {
+            // send request to the server for authentication
+            axios.post('https://my-flix-apps.herokuapp.com/login', {
+                Username: username,
+                Password: password
+            }).then(response => {
+                const data = response.data;
+                props.onLoggedIn(data);
+            }).catch(e => {
+                console.log('no such user')
+            });
+        }
     };
 
 
 
-    return (
-        // <Form>
-        //     <Form.Group controlId='formUsername'>
-        //         <Form.Label>Username:</Form.Label>
-        //         <Form.Control type='text' onChange={e => setUsername(e.target.value)} placeholder='Enter username' />
-        //     </Form.Group>
 
-        //     <Form.Group controlId='formPassword' >
-        //         <Form.Label>Password:</Form.Label>
-        //         <Form.Control type='password' onChange={e => setPassword(e.target.value)} placeholder='Enter password' />
-        //     </Form.Group>
-        //     <Button variant='primary' type='submit' onClick={handleSubmit}>Submit</Button>
-        // </Form>
+    return (
         <Container fluid className="bg-color">
             <Row className="vh-100 justify-content-center container-row">
-                
-                
                 {/* col 1/4 image (desktop only) */}
                 <Col xs={0} md={0} lg={3} xl={3} className="d-none d-lg-block background-image" />
                 
@@ -89,33 +113,47 @@ export function LoginView(props) {
                                         <p>Save your favorites easily and always have something to watch.</p>
                                     </Col>
                                 </Row>
-                            </Col>   
+                            </Col>
 
                             {/* FORM */}
                             <Col xs={12} md={12} lg={12} xl={6}>
                                 <Form>
                                     <Row className="gap-2  form-row">
                                         <Col xs={10} sm={8} lg={8}>
-                                            <FloatingLabel controlId='formUsername' label='Username' bg="primary" >
-                                                <Form.Control type='text' placeholder='Username' value={username} onChange={e => setUsername(e.target.value)} />
-                                            </FloatingLabel>
+                                            <Form.Group controlId="formUsername">
+                                                <FloatingLabel label='Username' bg="primary" >
+                                                    <Form.Control type='text' placeholder='Username' value={username} onChange={e => setUsername(e.target.value)} />
+                                                </FloatingLabel>
+                                                
+                                                {/* code here is to display validation errors */}
+                                                {usernameErr && <p>{usernameErr}</p>}
+
+                                            </Form.Group>
                                         </Col>
                                         <Col xs={10} sm={8} lg={8}>
-                                            <FloatingLabel controlId='formUsername' label='Username' bg="primary" >
-                                                <Form.Control type='text' placeholder='Username' value={username} onChange={e => setUsername(e.target.value)} />
-                                            </FloatingLabel>
+                                            <Form.Group controlId="formPassword">
+                                                <FloatingLabel label='Password' bg="primary" >
+                                                    <Form.Control type='text' placeholder='Password' value={password} onChange={e => setPassword(e.target.value)} />
+                                                </FloatingLabel>
+
+                                                {/* code added here to display validation error */}
+                                                {passwordErr && <p>{passwordErr}</p>}
+
+                                            </Form.Group>
                                         </Col>
                                         
-
+                                        {/* BUTTON THAT SUBMITS --------------------------------------- */}
                                         <Col xs={10} sm={8} lg={8} className="d-grid">
                                             <Button variant='success' type='submit' onClick={handleSubmit}>
                                                 Sign In
                                             </Button>
                                             <hr />
                                             <p xs={10} sm={8} lg={8} style={{marginBottom: "8px", textAlign: "center"}}>Don't have an account?</p>
-                                            <Button xs={10} sm={8} lg={8} variant='dark' >
-                                                Sign Up
-                                            </Button>
+                                            <Link to={`/register`}>
+                                                <Button xs={10} sm={8} lg={8} variant='dark' style={{width: "100%"}}>
+                                                    Register
+                                                </Button>
+                                            </Link>
                                         </Col>
                                         <Col xs={10} sm={8} lg={8} style={{padding: "5vh"}}>
                                             <Row>
