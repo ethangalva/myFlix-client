@@ -8,3 +8,12 @@
     color: white;
     padding: 8px;
 }
+.moviesByDirector {
+    max-width: 560px;
+    display: grid!important;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 16px;
+}
+.moviesBy {
+    width: 100%;
+}

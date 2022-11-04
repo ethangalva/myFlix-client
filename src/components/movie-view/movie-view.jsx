@@ -11,7 +11,7 @@ import '../../index.scss';
 export class MovieView extends React.Component { 
     
     render() {
-        const {movie, onBackClick} = this.props;
+        const {movie, onBackClick, movies} = this.props;
 
         return (
             <Row className="justify-content-center container-row movie-view" style={{backgroundColor: "#141414", margin: "0px"}}>
@@ -42,7 +42,7 @@ export class MovieView extends React.Component {
                         <Col xs={12} className="d-flex" style={{paddingTop: "1em"}}>
                             <Col xs={12}>
                                 <h1 className="white-font" style={{margin: "0px", marginBottom: "3px"}}>{movie.Title}</h1>
-                                <div  style={{marginBottom: ".5rem"}}>{movie.MovieLenght} &bull; <Link to={`/genres/${movie.Genre.Name}`}><span className='genre grow'>{movie.Genre.Name}</span></Link> &bull; {movie.ReleaseYear}</div>
+                                <div  style={{marginBottom: ".5rem"}}>{movie.MovieLenght} &bull; <Link to={`/genres/${movie.Genre.Name}`} movies={movies}><span className='genre grow'>{movie.Genre.Name}</span></Link> &bull; {movie.ReleaseYear}</div>
                                 <p>{movie.Description}</p>
                             </Col>  
                         </Col>

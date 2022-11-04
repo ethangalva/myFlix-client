@@ -61,9 +61,6 @@ export function LoginView(props) {
         }
     };
 
-
-
-
     return (
         <Container fluid className="bg-color">
             <Row className="vh-100 justify-content-center container-row">

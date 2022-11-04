@@ -10,10 +10,11 @@ import { Link } from "react-router-dom";
 import '../../index.scss';
 import './director-view.scss';
 
-export class DirectorView extends React.Component { 
+export class DirectorView extends React.Component {
     render() {
-        const {director, onBackClick} = this.props;
-        
+        // Movies has the information of the movies
+        const {director, onBackClick, Movies} = this.props;
+
         return (
             <Row className="justify-content-center director-view" style={{backgroundColor: "#141414", margin: "0px"}}>
                 <Col xs={12} className="d-flex padding-0 gap-3" style={{flexDirection: "column", minHeight: "90vh", maxWidth: "560px"}}>
@@ -41,9 +42,27 @@ export class DirectorView extends React.Component {
                             <span style={{color: "white", fontSize: "16px"}}>NA</span>
                         </Col>
                     </Row>
-                    {/* GO BACK BUTTON */}
+                    {/* MOVIES BY DIRECTOR */}
                     <Row style={{margin: "0px"}}>
-                        
+                        <Col>
+                            {/* Movies by */}
+                            <Row style={{justifyContent: "center", color: "white"}}>
+                                More by {director.Name.toUpperCase()}
+                                <br/>
+                            </Row>
+                            <Row className="moviesByDirector">
+                                {Movies.map((movie, index) => {
+                                    if (movie.Director.Name === director.Name) {
+                                        return <Col key={index} xs={6} style={{margin: "0px", padding: "10px", width: "100%", paddingBottom: "0px"}}>
+                                            <img className='moviesBy'  crossOrigin="src={movie.ImagePath}" src={movie.ImagePath} />
+                                            <div style={{textAlign: "center", color: "white"}} >{movie.Title}</div>
+                                        </Col>
+                                    }
+                                    
+                                    return null
+                                })}
+                            </Row>
+                        </Col>
                     </Row>
                 </Col>
                 <Col xs={12} className="d-flex padding-0 gap-3" style={{flexDirection: "column", minHeight: "10vh", maxWidth: "560px"}}>
